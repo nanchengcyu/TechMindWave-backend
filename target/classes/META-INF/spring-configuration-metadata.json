@@ -1,0 +1,72 @@
+{
+  "groups": [
+    {
+      "name": "ai.model",
+      "type": "com.nanchengyu.nanchengyubi.config.AiModelConfig",
+      "sourceType": "com.nanchengyu.nanchengyubi.config.AiModelConfig"
+    },
+    {
+      "name": "cos.client",
+      "type": "com.nanchengyu.nanchengyubi.config.CosClientConfig",
+      "sourceType": "com.nanchengyu.nanchengyubi.config.CosClientConfig"
+    },
+    {
+      "name": "spring.redis",
+      "type": "com.nanchengyu.nanchengyubi.config.RedissonConfig",
+      "sourceType": "com.nanchengyu.nanchengyubi.config.RedissonConfig"
+    }
+  ],
+  "properties": [
+    {
+      "name": "ai.model.model-id",
+      "type": "java.lang.Long",
+      "description": "模型id",
+      "sourceType": "com.nanchengyu.nanchengyubi.config.AiModelConfig"
+    },
+    {
+      "name": "cos.client.access-key",
+      "type": "java.lang.String",
+      "description": "accessKey",
+      "sourceType": "com.nanchengyu.nanchengyubi.config.CosClientConfig"
+    },
+    {
+      "name": "cos.client.bucket",
+      "type": "java.lang.String",
+      "description": "桶名",
+      "sourceType": "com.nanchengyu.nanchengyubi.config.CosClientConfig"
+    },
+    {
+      "name": "cos.client.region",
+      "type": "java.lang.String",
+      "description": "区域",
+      "sourceType": "com.nanchengyu.nanchengyubi.config.CosClientConfig"
+    },
+    {
+      "name": "cos.client.secret-key",
+      "type": "java.lang.String",
+      "description": "secretKey",
+      "sourceType": "com.nanchengyu.nanchengyubi.config.CosClientConfig"
+    },
+    {
+      "name": "spring.redis.database",
+      "type": "java.lang.Integer",
+      "sourceType": "com.nanchengyu.nanchengyubi.config.RedissonConfig"
+    },
+    {
+      "name": "spring.redis.host",
+      "type": "java.lang.String",
+      "sourceType": "com.nanchengyu.nanchengyubi.config.RedissonConfig"
+    },
+    {
+      "name": "spring.redis.password",
+      "type": "java.lang.String",
+      "sourceType": "com.nanchengyu.nanchengyubi.config.RedissonConfig"
+    },
+    {
+      "name": "spring.redis.port",
+      "type": "java.lang.Integer",
+      "sourceType": "com.nanchengyu.nanchengyubi.config.RedissonConfig"
+    }
+  ],
+  "hints": []
+}
