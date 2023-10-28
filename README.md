@@ -1,5 +1,7 @@
 🥷作者：南城余<br />
 📕公众号：南城余<br />
+💫作者：南城余<br />
+🌟全平台账号：公众号、CSDN、GitHub、语雀、知乎(同名：南城余)<br />
 本期公众号网址：<br />
 https://mp.weixin.qq.com/s/FlzCd4PqOReqxszU6Nfw_g
 -----------------------------
