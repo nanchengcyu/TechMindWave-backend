@@ -7,7 +7,7 @@ https://mp.weixin.qq.com/s/FlzCd4PqOReqxszU6Nfw_g
 -----------------------------
 相关笔记链接🔗<br />
 南城余：https://www.yuque.com/g/nanchengcyu/dubfny/ibwmnan5bo9uf51x/collaborator/join?token=wkxCKWCK5Lt3BlsI&source=doc_collaborator# 《TechMindWave》<br />
-知识星球：[https://bcdh.yuque.com/staff-wpxfif/resource/oywzglpnxegf579a](https://bcdh.yuque.com/staff-wpxfif/resource/oywzglpnxegf579a)<br />猫十二：[https://www.yuque.com/kcsshier/zpovmy/frhxvidgief5r5df?singleDoc](https://www.yuque.com/kcsshier/zpovmy/frhxvidgief5r5df?singleDoc)
+
 # 上传前后端代码教程
 相关链接🔗：<br />[https://zhuanlan.zhihu.com/p/193140870](https://zhuanlan.zhihu.com/p/193140870)<br />前端代码：<br />[https://github.com/nanchengcyu/TechMindWave-frontend](https://github.com/nanchengcyu/TechMindWave-frontend)<br />后端代码：<br />[https://github.com/nanchengcyu/TechMindWave-backend](https://github.com/nanchengcyu/TechMindWave-backend)
 
