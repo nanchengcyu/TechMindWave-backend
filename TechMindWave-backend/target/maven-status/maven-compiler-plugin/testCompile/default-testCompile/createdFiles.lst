@@ -1,0 +1,10 @@
+com\nanchengyu\nanchengyubi\controller\AliPayControllerTest.class
+com\nanchengyu\nanchengyubi\manager\AiManagerTest.class
+com\nanchengyu\nanchengyubi\manager\RedisLimiterManagerTest.class
+com\nanchengyu\nanchengyubi\nanchengyuApplicationTests.class
+com\nanchengyu\nanchengyubi\service\ChartServiceTest.class
+com\nanchengyu\nanchengyubi\bizmq\BiMqMessageProducerTest.class
+com\nanchengyu\nanchengyubi\bizmq\BiMassageFailConsumerTest.class
+com\nanchengyu\nanchengyubi\utils\EasyExcelTest.class
+com\nanchengyu\nanchengyubi\bizmq\RabbitMqMessageProducerTest.class
+com\nanchengyu\nanchengyubi\service\UserServiceTest.class
