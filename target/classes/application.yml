@@ -1,0 +1,98 @@
+spring:
+  application:
+    name: TechMindWave
+  # 默认 dev 环境
+  profiles:
+    active: dev
+    # 对象存储
+    # todo 需替换配置
+    cos:
+#      client:
+#        accessKey: xxx
+#        secretKey: xxx
+#        region: xxx
+#        bucket: xxx
+  # 支持 swagger3
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  # session 配置
+  session:
+    # store-type: redis
+    # 1 天过期
+    timeout: 86400
+  # 数据库配置
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://106.14.202.122:3306/techmindwave?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8&useSSL=false
+    username: root
+    password: 1234
+  # Redis 配置
+  redis:
+    port: 6379
+    host: 106.14.202.122
+    database: 1
+    password: 1234
+  # 文件上传
+  servlet:
+    multipart:
+      # 大小限制
+      max-file-size: 1MB
+  # rabbitmq 信息
+  rabbitmq:
+    host: 106.14.202.122
+    password: 1234
+    username: nanchengyu
+    port: 5672
+    virtual-host: /
+    listener:
+      direct:
+        acknowledge-mode: manual
+server:
+  address: 0.0.0.0
+  port: 8001
+  servlet:
+    context-path: /api
+    # cookie 30 天过期
+    session:
+      cookie:
+        max-age: 2592000
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: false
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      logic-delete-field: isDelete # 全局逻辑删除的实体字段名
+      logic-delete-value: 1 # 逻辑已删除值（默认为 1）
+      logic-not-delete-value: 0 # 逻辑未删除值（默认为 0）
+# 阿里云对象存储
+aliyun:
+  oss:
+    file:
+      endpoint: oss-cn-heyuan.aliyuncs.com
+      keyid: LTAI5tL7CJUcDiPh1S9USHAb
+      keysecret: D1aN2Txfr0RLcs0s6cBcaQ2VmLu6qd
+      bucketname: xxxx
+# 要使用的模型ID
+ai:
+  model:
+    model-id: 1660100329896673281
+# 鱼聪明SDK
+yuapi:
+  client:
+    access-key: ggi3ek77xpobxuj5trqqsbtxf90desqw
+    secret-key: 1f9mbspntrxclnndviyf63h3rd0x32ey
+## 讯飞 AI 配置
+xunfei:
+  client:
+    appid: 57a817e9
+    apiSecret: MzVlNjY0YTVhMjc1MDc0MjJlMGNiNTYy
+    apiKey: 028b3fed8be7daeae38a4cda70f73262
+# 支付宝沙箱
+pay:
+  qrcodeurl: http://47.113.148.239:8001/api/alipay/tradeQuery?alipayAccountNo=16638747874
+  alipay:
+    APP_ID: 9021000125623321
+    APP_PRIVATE_KEY: MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCPywjkxs3FQ/z/C+NXgtkCm1yFji9Gx8grdG5EXXh9EU1S8mxEw2lsU/ihH6f3TFxLlngvcIOJ1rDaXgl+5b66aHs1sdH0kF9p0KD5TJMHv4tiS0GQzRB1sNassI4ymxEYAmpddwT4K2AFG/yGdKgzULsLnGINyNhIVsmlyW5BUOGM+r6YnuoYsyhRwJa7BhFAZpINFKE4QWwCkrNxD01rcOIue0ATXDHtet0LsDJKMsiRKA3WsoPSpd38cUnDCS51C306HVHxok2QmL8AGB9Ci3ENPPr7TK3T46xTr87XdEO5TC58Z6UZHImFSbfTridef7IIzE2u3wDjbuqOlUszAgMBAAECggEAGRSZ5YWDiJ/WNgo1yiLJhTniBm2Jc3gPQv0Y6pW/GVl2OjyMg+XtsnZnDHuACZNpGcoSBnxChT1MNZpnX5nlDZCBxRjR/S1dZxB7s2AW2SggwLFNq1sJPu3sU8yr0MnZTm3Fba3/0OWH5vw9rJoWaHTxWxIYzDy29M8mduNOdtfHcHE3udJEFn0bh5Zxq1Txpx+3KmXH2zzSEZXqDW0ntI8FdrPRs1nINa7qWa7xzQLFRXGMWnNoJ6kww/QP1NjKFIO3QAT4Cv0ZD4iRbAUJbuHhStGovU7T84Gf64RZkjwHHahtrqi+TkmgQYPKJvDnT2vbT5MvgZ9OeFKz8xXJQQKBgQDp33qopnwQvp0lIWNNVL1rTW2S+RPaBgqmzBinaTw2lXlGA3a/WDm3ylangvMLQhP9B64THeEuywfRrbw8d4NyvZWknF2wjBLbLryrN3fEIx3mwbTkG+ci5KF03mz03O3HKnjeYfNp9hr1b1uuDGpjqqXLwkATh9IBHT/xDl5XEwKBgQCdZcar+H8elMHUDcOsCIBM/mLOs66r5VxXvFsa2TzhoZGIMppuEmum9k2pdfzJ9UXpycb6kLDYcYoEZhHAKvfcbeWDnBvaSBXFuSRqN1aTbRwm6WWQ1n43ak6/mHXdqSZnMywDSSN5fAGiK0s7dQF4C00EXXgowXhcHjce0OkfYQKBgQCshpnbtAUt7Q/MBldVAsBBWfsNQwVr/qz44vME/NLYiWfPSFrfSNw7Qt6t8CIPGg3YyUOXAqHNfSUlfv6vtJKZoFW1+0v6Izr9yfqQa/jEDgvO4PLqm9LkoLiimDrUX+5g0God0zBX6J92k1GUkcAiCg8IwyG1xqoa/FLhJvJdVQKBgGRp069OnzqRSH7SMS0FV2THPZ4E/8BmWN0YKz8brD195+xt7Bug4NDpfW5I+XaWZX3a3nhn6oqLFLPtshFY2DvmWG/4HcTKDCnSDas9lpwDFdy1NbiLPoZ36blNuJQrH3bjLIcEF/+e3yPoXtyVrtQ40W+hedD2bKTIGf4s5SzBAoGBANySMrvzoUaN+S2iTFsLYwbGmY7VVewfxD0FYYDYnTx+enUzPmqamebpeDeSZaircgofUOqabvnxce5trRM97oCf9RZPehMEz3pAamnH0aJ+z720wyKSbxf86wJqtshZGcRiDolh8JM+A4GcK4YfrfON1fTfbdLZbydx7UUoyE0n
+    ALIPAY_PUBLIC_KEY: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAm8yJlpXPOk6cadVSpBmB4gkXk1ph6yFXZAb1Hb5j0B2MeaDenaIVrhLub38PuymsophkkNvK/mO/CalS/8DgkiH1Vip7stggZORTjaSmj/RmlfebQTdgpwAII2Fx7VTOKwIM8ToE9F6WZNSJ0TWjKkPzVOYnp5T4QGhpZ3hTpv2EGNuIz4MU6bHZrJdp+iJVPA8gLxYyfE6b6sYwSALsuBIoCRWUcowNHwtGnLbD4YPwQeucZTzfxU99Xx0TAjTAxOQ9sEM3tHikhH26LwoPNvCSi4jYFuIAhM+kthf7l9SCiFujLWBtRATHMLXUruQy00HR8vSWR6Zx9TIEhlcWNwIDAQAB

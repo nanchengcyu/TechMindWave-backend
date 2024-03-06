@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="879a5b8c-91c5-4465-b2d4-8f216e7eadd8" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/config/XingHuoConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/controller/BiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/bizmq/AiAssistantMq.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/bizmq/AiAssistantMq.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/bizmq/BiMqMessageConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/bizmq/BiMqMessageConsumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/bizmq/BiMqMessageProducer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/bizmq/BiMqMessageProducer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/bizmq/TextMessageConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/bizmq/TextMessageConsumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/bizmq/TextMessageDeadConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/bizmq/TextMessageDeadConsumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/common/BaseResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/common/BaseResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/config/RabbitMqConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/config/RabbitMqConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/constant/BiMqConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/constant/BiMqConstant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/constant/MqConstant.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/controller/AiAssistantController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/controller/AiAssistantController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/controller/AiFrequencyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/controller/AiFrequencyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/controller/AiFrequencyOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/controller/AiFrequencyOrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/controller/AliPayController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/controller/AliPayController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/controller/AliPayInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/controller/AliPayInfoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/controller/ChartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/controller/ChartController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/controller/CreditController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/controller/CreditController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/controller/FileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/controller/FileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/controller/QueueController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/controller/QueueController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/controller/TextController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/controller/TextController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/manager/AiManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/manager/AiManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/model/entity/Chart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/model/entity/Chart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/mq/DirectConsumer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/mq/DirectProducer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/mq/DlxDirectConsumer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/mq/DlxDirectProducer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/mq/FanoutConsumer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/mq/FanoutProducer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/mq/MultiConsumer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/mq/MultiProducer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/mq/SingleConsumer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/mq/SingleProducer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/mq/TopicConsumer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/mq/TopicProducer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/mq/TtlConsumer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/mq/TtlProducer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/ordermq/OrderDelayedQueueConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/ordermq/OrderManageProducer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/ordermq/OrderMqMessageComsumer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/service/impl/ChartServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/service/impl/ChartServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/nanchengyu/nanchengyubi/bizmq/RabbitMqMessageProducerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/nanchengyu/nanchengyubi/bizmq/RabbitMqMessageProducerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/spring-configuration-metadata.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application-prod.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application-test.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/NanchengyuApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/annotation/AuthCheck.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/aop/AuthInterceptor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/aop/LogInterceptor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/bizmq/AiAssistantMq.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/bizmq/AiMqInit.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/bizmq/BiMassageFailConsumer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/bizmq/BiMqInit.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/bizmq/BiMqMessageConsumer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/bizmq/BiMqMessageProducer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/bizmq/MqMessageProducer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/bizmq/RabbitMqInitDemo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/bizmq/RabbitMqMessageConsumer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/bizmq/RabbitMqMessageProducer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/bizmq/TextMessageConsumer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/bizmq/TextMessageDeadConsumer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/bizmq/TextMqInitMain.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/common/BaseResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/common/DeleteRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/common/ErrorCode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/common/PageRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/common/ResultUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/config/AiModelConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/config/AliPayConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/config/CorsConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/config/CosClientConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/config/JsonConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/config/Knife4jConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/config/MyBatisPlusConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/config/RabbitMqConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/config/RedissonConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/config/ThreadPoolExecutorConfig$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/config/ThreadPoolExecutorConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/constant/BiMqConstant.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/constant/ChartConstant.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/constant/CommonConstant.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/constant/CreditConstant.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/constant/FileConstant.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/constant/MqConstant.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/constant/TextConstant.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/constant/UserConstant.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/controller/AiAssistantController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/controller/AiFrequencyController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/controller/AiFrequencyOrderController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/controller/AliPayController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/controller/AliPayInfoController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/controller/ChartController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/controller/CreditController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/controller/FileController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/controller/QueueController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/controller/TextController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/controller/UserController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/exception/BusinessException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/exception/GlobalExceptionHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/exception/ThrowUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/manager/AiManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/manager/CosManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/manager/RedisLimiterManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/mapper/AiAssistantMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/mapper/AiFrequencyMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/mapper/AiFrequencyOrderMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/mapper/AlipayInfoMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/mapper/ChartMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/mapper/CreditMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/mapper/OrdersMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/mapper/TextRecordMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/mapper/TextTaskMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/mapper/UserCodeMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/mapper/UserMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/model/dto/aiassistant/AiAssistantAddRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/model/dto/aiassistant/AiAssistantEditRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/model/dto/aiassistant/AiAssistantQueryRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/model/dto/aiassistant/AiAssistantUpdateRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/model/dto/aiassistant/GenChatByAiRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/model/dto/alipayinfo/AlipayInfoQueryRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/model/dto/chart/ChartAddRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/model/dto/chart/ChartEditRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/model/dto/chart/ChartQueryRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/model/dto/chart/ChartUpdateRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/model/dto/chart/GenChartByAiRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/model/dto/credit/CreditAddRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/model/dto/credit/CreditEditRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/model/dto/credit/CreditQueryRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/model/dto/credit/CreditUpdateRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/model/dto/file/UploadFileRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/model/dto/frequency/FrequencyRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/model/dto/order/AiFrequencyOrderCancelRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/model/dto/order/AiFrequencyOrderQueryRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/model/dto/order/AiFrequencyOrderUpdateRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/model/dto/order/OrderAddRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/model/dto/order/OrderUpdateRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/model/dto/text/GenTextTaskByAiRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/model/dto/text/TextAddRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/model/dto/text/TextEditRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/model/dto/text/TextRebuildRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/model/dto/text/TextTaskQueryRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/model/dto/text/TextUpdateRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/model/dto/user/UserAddRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/model/dto/user/UserLoginRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/model/dto/user/UserQueryRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/model/dto/user/UserRegisterRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/model/dto/user/UserUpdateMyRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/model/dto/user/UserUpdateRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/model/entity/AiAssistant.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/model/entity/AiFrequency.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/model/entity/AiFrequencyOrder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/model/entity/AlipayInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/model/entity/Chart.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/model/entity/Credit.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/model/entity/Orders.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/model/entity/TextRecord.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/model/entity/TextTask.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/model/entity/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/model/entity/UserCode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/model/enums/AiAssistantStatusEnum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/model/enums/ChartStatusEnum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/model/enums/FileUploadBizEnum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/model/enums/PayOrderEnum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/model/enums/UserRoleEnum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/model/enums/UserStatusEnum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/model/vo/AiFrequencyOrderVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/model/vo/AiFrequencyVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/model/vo/AiResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/model/vo/AlipayInfoVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/model/vo/BiResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/model/vo/LoginUserVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/model/vo/PayInfoVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/model/vo/TextTaskVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/model/vo/UserCodeVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/model/vo/UserVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/mq/DirectConsumer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/mq/DirectProducer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/mq/DlxDirectConsumer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/mq/DlxDirectProducer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/mq/FanoutConsumer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/mq/FanoutProducer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/mq/MultiConsumer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/mq/MultiProducer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/mq/SingleConsumer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/mq/SingleProducer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/mq/TopicConsumer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/mq/TopicProducer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/mq/TtlConsumer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/mq/TtlProducer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/ordermq/OrderDelayedQueueConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/ordermq/OrderManageProducer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/ordermq/OrderMqMessageComsumer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/service/AiAssistantService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/service/AiFrequencyOrderService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/service/AiFrequencyService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/service/AlipayInfoService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/service/ChartService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/service/CreditService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/service/FileService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/service/OrdersService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/service/TextRecordService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/service/TextTaskService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/service/UserCodeService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/service/UserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/service/impl/AiAssistantServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/service/impl/AiFrequencyOrderServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/service/impl/AiFrequencyServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/service/impl/AlipayInfoServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/service/impl/ChartServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/service/impl/CreditServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/service/impl/FileServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/service/impl/OrdersServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/service/impl/TextRecordServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/service/impl/TextTaskServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/service/impl/UserCodeServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/service/impl/UserServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/utils/ChartUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/utils/EncryptUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/utils/ExcelUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/utils/FileUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/utils/IdWorkerUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/utils/NetUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/utils/QRCodeUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/utils/SpringContextUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/utils/SqlUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nanchengyu/nanchengyubi/utils/TxtUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/AiAssistantMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/AiFrequencyMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/AiFrequencyOrderMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/AlipayInfoMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/ChartMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/CreditMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/OrdersMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/TextRecordMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/TextTaskMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/UserCodeMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/UserMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/测试数据.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/经营测试数据.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/网站测试数据.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/营销测试数据.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/nanchengyu-backend-5.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/nanchengyu-backend-5.0-SNAPSHOT.jar.original" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/nanchengyu/nanchengyubi/bizmq/BiMassageFailConsumerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/nanchengyu/nanchengyubi/bizmq/BiMqMessageProducerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/nanchengyu/nanchengyubi/bizmq/RabbitMqMessageProducerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/nanchengyu/nanchengyubi/controller/AliPayControllerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/nanchengyu/nanchengyubi/manager/AiManagerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/nanchengyu/nanchengyubi/manager/RedisLimiterManagerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/nanchengyu/nanchengyubi/nanchengyuApplicationTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/nanchengyu/nanchengyubi/service/ChartServiceTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/nanchengyu/nanchengyubi/service/UserServiceTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/nanchengyu/nanchengyubi/utils/EasyExcelTest.class" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 5
+}]]></component>
+  <component name="ProjectId" id="2dJTpsZo4lCaVhHMwBSHKiJkprR" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "D:/A-yupixiangmu/BI/TechMindWave-backend/src/main/java/com/nanchengyu/nanchengyubi/mapper",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "File.Encoding",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
+  }
+}]]></component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\A-yupixiangmu\BI\TechMindWave-backend\src\main\java\com\nanchengyu\nanchengyubi\mapper" />
+      <recent name="D:\A-yupixiangmu\BI\TechMindWave-backend\src\main\resources\mapper" />
+      <recent name="D:\A-yupixiangmu\BI\TechMindWave-backend\src\main\java\com\nanchengyu\nanchengyubi\model\dto" />
+      <recent name="D:\A-yupixiangmu\BI\TechMindWave-backend\src\main\java\com\nanchengyu\nanchengyubi\model\entity" />
+      <recent name="D:\A-yupixiangmu\BI\TechMindWave-backend\src\main\java\com\nanchengyu\nanchengyubi\service" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.nanchengyu.nanchengyubi.model.vo" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="NanchengyuApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="nanchengyu-backend" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.nanchengyu.nanchengyubi.NanchengyuApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="879a5b8c-91c5-4465-b2d4-8f216e7eadd8" name="Changes" comment="" />
+      <created>1709725370946</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1709725370946</updated>
+      <workItem from="1709725377849" duration="7480000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/service/impl/ChartServiceImpl.java</url>
+          <line>362</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
