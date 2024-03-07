@@ -4,7 +4,11 @@ import com.baomidou.mybatisplus.annotation.*;
 
 import java.io.Serializable;
 import java.util.Date;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * 积分表
@@ -12,6 +16,9 @@ import lombok.Data;
  */
 @TableName(value ="credit")
 @Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Credit implements Serializable {
     /**
      * id

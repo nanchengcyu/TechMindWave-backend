@@ -112,7 +112,7 @@ public class ChartServiceImpl extends ServiceImpl<ChartMapper, Chart> implements
         String csvData = ExcelUtils.excelToCsv(multipartFile);
         userInput.append(csvData).append("\n");
         // 调用AI
-        String chartResult = aiManager.doChat(userInput.toString(), TextConstant.MODE_ID);
+        String chartResult = aiManager.sendMesToAIUseXingHuo(AiManager.PRECONDITION + userInput);
         // 解析内容
         String[] splits = chartResult.split(ChartConstant.GEN_CONTENT_SPLITS);
         if (splits.length < ChartConstant.GEN_ITEM_NUM) {
@@ -121,10 +121,6 @@ public class ChartServiceImpl extends ServiceImpl<ChartMapper, Chart> implements
         // 首次生成的内容
         String preGenChart = splits[ChartConstant.GEN_CHART_IDX].trim();
         String genResult = splits[ChartConstant.GEN_RESULT_IDX].trim();
-        String validGenChart = ChartUtils.getValidGenChart(preGenChart);
-
-        //ThrowUtils.throwIf(StringUtils.isBlank(preGenChart), ErrorCode.PARAMS_ERROR, "AI 生成数据为空，请重试~");
-
         // 插入数据到数据库
         Chart chart = new Chart();
         chartName = StringUtils.isBlank(chartName) ? ChartUtils.genDefaultChartName() : chartName;
