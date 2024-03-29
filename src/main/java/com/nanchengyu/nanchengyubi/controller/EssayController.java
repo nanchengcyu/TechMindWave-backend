@@ -43,7 +43,6 @@ import javax.servlet.http.HttpServletRequest;
 @RestController
 @RequestMapping("/essay")
 @Slf4j
-
 @CrossOrigin(origins = {"https://techmindwave.nanchengyu.cn", "http://localhost:800"}, allowCredentials = "true")
 public class EssayController {
 
@@ -58,12 +57,9 @@ public class EssayController {
     @Resource
     private AiManager aiManager;
 
-
     private final static Gson GSON = new Gson();
 
     // region 增删改查
-
-
     @PostMapping("/gen")
     @AuthCheck(mustRole = UserConstant.DEFAULT_ROLE)
     public BaseResponse<EssayResponse> genEssay(

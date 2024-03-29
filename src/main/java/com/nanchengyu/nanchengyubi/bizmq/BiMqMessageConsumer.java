@@ -131,7 +131,6 @@ public class BiMqMessageConsumer {
     }
 
     private String getGenResult(Chart chart) {
-        // 无需Prompt，直接调用现有模型
         // 构造用户输入
         StringBuilder userInput = new StringBuilder();
         userInput.append("分析需求：").append("\n");

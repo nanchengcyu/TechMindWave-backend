@@ -5,6 +5,7 @@ import com.nanchengyu.nanchengyubi.constant.BiMqConstant;
 import com.nanchengyu.nanchengyubi.constant.CommonConstant;
 import com.nanchengyu.nanchengyubi.manager.AiManager;
 import com.nanchengyu.nanchengyubi.model.entity.AiAssistant;
+import com.nanchengyu.nanchengyubi.model.entity.Chart;
 import com.nanchengyu.nanchengyubi.model.enums.ChartStatusEnum;
 import com.nanchengyu.nanchengyubi.service.AiAssistantService;
 import com.rabbitmq.client.Channel;
@@ -42,7 +43,9 @@ public class AiAssistantMq {
             aiAssistant = GSON.fromJson(data, AiAssistant.class);
             String questionGoal = aiAssistant.getQuestionGoal();
             // 调用 AI
-            String result = aiManager.doAiChat(CommonConstant.AI_MODEL_ID, questionGoal);
+            //String result = aiManager.doAiChat(CommonConstant.AI_MODEL_ID, questionGoal);
+            String result = getAnswerResult(aiAssistant);
+
             aiAssistant.setQuestionResult(result);
             aiAssistant.setQuestionStatus(ChartStatusEnum.SUCCEED.getValue());
             aiAssistantService.updateById(aiAssistant);
@@ -58,4 +61,23 @@ public class AiAssistantMq {
             }
         }
     }
+
+    private String getAnswerResult(AiAssistant aiAssistant) {
+        // 构造用户输入
+        StringBuilder userInput = new StringBuilder();
+        userInput.append("问题类型:").append("\n");
+        // 拼接分析目标
+        String userGoal = aiAssistant.getQuestionType();
+        userInput.append(userGoal).append("\n");
+        userInput.append("问题名称：").append("\n");
+
+        userInput.append(aiAssistant.getQuestionName()).append("\n");
+
+        userInput.append("问题概述：").append("\n");
+        userInput.append(aiAssistant.getQuestionGoal()).append("\n");
+        // 调用AI
+        return aiManager.sendMesToAIUseXingHuo(AiManager.ANSWER_PRECONDITION + userInput);
+    }
+
+
 }

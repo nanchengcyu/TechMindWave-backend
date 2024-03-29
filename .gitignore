@@ -1,0 +1,25 @@
+# .gitignore for Java Maven project
+*.yml
+target/
+*.class
+!.mvn/wrapper/maven-wrapper.jar
+*.jar
+*.war
+*.ear
+*.parquet
+*.log
+local.properties
+.DS_Store
+.Spotlight-V100
+.Trashes
+.fseventsd
+.DStore.001
+*.iml
+*.iws
+*.bak
+*.swp
+*~.nib
+.classpath
+.project
+.settings/
+.loadpath

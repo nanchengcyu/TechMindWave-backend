@@ -50,6 +50,12 @@ public class AiManager {
             "{明确的数据分析结论、越详细越好，不要生成多余的注释} \n" +
             "最终格式是:  【【【【【 前端代码【【【【【分析结论 \n";
 
+
+    public static final String ANSWER_PRECONDITION = "你是一个问题回答专家，接下来我会按照以下固定格式给你提供内容，然后生成答案即可：\n" +
+            "            问题类型：\n" +
+            "            问题名称：\n" +
+            "            问题概述：";
+
     public static final String ESSAY_PRECONDITION = "你是一个作家，接下来接下来我会按照以下固定格式给你提供内容：\n" +
             "          标题：\n" +
             "          文章类型：\n" +
