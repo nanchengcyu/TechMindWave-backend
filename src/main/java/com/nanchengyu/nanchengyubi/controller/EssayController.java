@@ -24,12 +24,14 @@ import com.nanchengyu.nanchengyubi.model.entity.Essay;
 import com.nanchengyu.nanchengyubi.model.entity.User;
 import com.nanchengyu.nanchengyubi.model.vo.BiResponse;
 import com.nanchengyu.nanchengyubi.model.vo.EssayResponse;
+import com.nanchengyu.nanchengyubi.service.AiFrequencyService;
 import com.nanchengyu.nanchengyubi.service.EssayService;
 import com.nanchengyu.nanchengyubi.service.UserService;
 import com.nanchengyu.nanchengyubi.utils.SqlUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.ObjectUtils;
 import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 
@@ -45,6 +47,8 @@ import javax.servlet.http.HttpServletRequest;
 @Slf4j
 @CrossOrigin(origins = {"https://techmindwave.nanchengyu.cn", "http://localhost:800"}, allowCredentials = "true")
 public class EssayController {
+    @Autowired
+    AiFrequencyService aiFrequencyService;
 
     @Resource
     RedisLimiterManager redisLimiterManager;
@@ -83,6 +87,9 @@ public class EssayController {
                 .essayTitle(essayAddRequest.getEssayName())
                 .essayType(essayAddRequest.getEssayType())
                 .build();
+        //调用ai次数减一
+        boolean invokeAutoDecrease = aiFrequencyService.invokeAutoDecrease(loginUser.getId());
+        ThrowUtils.throwIf(!invokeAutoDecrease, ErrorCode.PARAMS_ERROR, "次数减一失败");
         return new BaseResponse<>(essayResponse);
     }
 

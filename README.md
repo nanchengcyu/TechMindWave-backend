@@ -23,4 +23,3 @@
 9. Hutool工具库
 
 ### 架构图
-![img.png](img.png)

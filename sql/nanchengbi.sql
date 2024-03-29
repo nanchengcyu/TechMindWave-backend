@@ -463,7 +463,7 @@ DROP TABLE IF EXISTS `essay`;
 CREATE TABLE `essay`
 (
     `id`         bigint(20)                                                    NOT NULL AUTO_INCREMENT COMMENT 'id',
-    `essayName`  varchar(256) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL     DEFAULT NULL COMMENT '文章名称',
+    `essayName`  text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL     DEFAULT NULL COMMENT '文章名称',
     `essayType`  varchar(256) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL     DEFAULT NULL COMMENT '文章类型',
     `genEssay`   text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci         NULL COMMENT '生成的文章内容',
     `userId`     bigint(20)                                                    NULL     DEFAULT NULL COMMENT '创建文章用户 id',
