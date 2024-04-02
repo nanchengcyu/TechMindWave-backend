@@ -13,8 +13,9 @@
       <schema-mapping>
         <introspection-scope>
           <node kind="schema">
-            <name qname="techmindwave" />
             <name qname="@" />
+            <name qname="errand" />
+            <name qname="techmindwave" />
           </node>
         </introspection-scope>
       </schema-mapping>
