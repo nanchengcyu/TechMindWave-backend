@@ -14,14 +14,12 @@ import com.nanchengyu.nanchengyubi.model.dto.user.UserQueryRequest;
 import com.nanchengyu.nanchengyubi.model.dto.user.UserRegisterRequest;
 import com.nanchengyu.nanchengyubi.model.dto.user.UserUpdateMyRequest;
 import com.nanchengyu.nanchengyubi.model.entity.AiFrequency;
-import com.nanchengyu.nanchengyubi.model.entity.Credit;
 import com.nanchengyu.nanchengyubi.model.entity.User;
 import com.nanchengyu.nanchengyubi.model.entity.UserCode;
 import com.nanchengyu.nanchengyubi.model.enums.UserRoleEnum;
 import com.nanchengyu.nanchengyubi.model.vo.LoginUserVO;
 import com.nanchengyu.nanchengyubi.model.vo.UserVO;
 import com.nanchengyu.nanchengyubi.service.AiFrequencyService;
-import com.nanchengyu.nanchengyubi.service.CreditService;
 import com.nanchengyu.nanchengyubi.service.UserCodeService;
 import com.nanchengyu.nanchengyubi.service.UserService;
 import com.nanchengyu.nanchengyubi.utils.SqlUtils;
@@ -54,8 +52,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
     @Resource
     private UserCodeService userCodeService;
 
-    @Resource
-    private CreditService creditService;
+
 
     /**
      * 用户注册
@@ -111,8 +108,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
             code.setUserId(user.getId());
             userCodeService.save(code);
 
-            // 注册 credit
-            creditService.save(Credit.builder().creditTotal(0L).userId(user.getId()).build());
+
             return user.getId();
         }
     }

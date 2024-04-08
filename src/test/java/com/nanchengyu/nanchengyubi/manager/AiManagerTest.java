@@ -1,6 +1,6 @@
 package com.nanchengyu.nanchengyubi.manager;
 
-import com.nanchengyu.nanchengyubi.constant.TextConstant;
+import com.nanchengyu.nanchengyubi.controller.TextConstant;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 

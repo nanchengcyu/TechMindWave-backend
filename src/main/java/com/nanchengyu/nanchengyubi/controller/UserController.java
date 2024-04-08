@@ -16,10 +16,8 @@ import com.nanchengyu.nanchengyubi.model.entity.UserCode;
 import com.nanchengyu.nanchengyubi.model.vo.LoginUserVO;
 import com.nanchengyu.nanchengyubi.model.vo.UserCodeVO;
 import com.nanchengyu.nanchengyubi.model.vo.UserVO;
-import com.nanchengyu.nanchengyubi.service.CreditService;
 import com.nanchengyu.nanchengyubi.service.UserCodeService;
 import com.nanchengyu.nanchengyubi.service.UserService;
-import com.nanchengyu.nanchengyubi.model.dto.user.*;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
@@ -52,8 +50,7 @@ public class UserController {
 
     @Resource
     private UserCodeService userCodeService;
-    @Resource
-    private CreditService creditService;
+
 
 
     /**
@@ -329,21 +326,6 @@ public class UserController {
         return true;
     }
 
-    /**
-     * 根据 当前登录用户 获取积分总数
-     * @param request
-     * @return
-     */
-    @GetMapping("/get/credit")
-    public BaseResponse<Long> getCreditByUserId(HttpServletRequest request) {
-        User loginUser = userService.getLoginUser(request);
-        Long userId = loginUser.getId();
-        Long creditTotal = creditService.getCreditTotal(userId);
-        if (creditTotal == null) {
-            throw new BusinessException(ErrorCode.NOT_FOUND_ERROR);
-        }
-        return ResultUtils.success(creditTotal);
-    }
 
 
 }

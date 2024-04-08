@@ -1004,24 +1004,24 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <collation id="273" parent="1" name="utf8mb4_0900_bin">
       <Charset>utf8mb4</Charset>
     </collation>
-    <schema id="274" parent="1" name="errand">
+    <schema id="274" parent="1" name="information_schema">
+      <CollationName>utf8_general_ci</CollationName>
+    </schema>
+    <schema id="275" parent="1" name="mysql">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="276" parent="1" name="performance_schema">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="277" parent="1" name="sys">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="278" parent="1" name="errand">
       <IntrospectionTimestamp>2024-04-02.19:06:13</IntrospectionTimestamp>
       <LocalIntrospectionTimestamp>2024-04-02.03:06:13</LocalIntrospectionTimestamp>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="275" parent="1" name="gulimall_pms">
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
-    </schema>
-    <schema id="276" parent="1" name="information_schema">
-      <CollationName>utf8_general_ci</CollationName>
-    </schema>
-    <schema id="277" parent="1" name="mysql">
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
-    </schema>
-    <schema id="278" parent="1" name="performance_schema">
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
-    </schema>
-    <schema id="279" parent="1" name="sys">
+    <schema id="279" parent="1" name="gulimall_pms">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <schema id="280" parent="1" name="techmindwave">
@@ -1051,21 +1051,21 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <table id="286" parent="274" name="admin">
+    <table id="286" parent="278" name="admin">
       <Comment>管理员</Comment>
       <Engine>InnoDB</Engine>
       <Options>row_format
 DYNAMIC</Options>
       <CollationName>utf8mb4_unicode_ci</CollationName>
     </table>
-    <table id="287" parent="274" name="notice">
+    <table id="287" parent="278" name="notice">
       <Comment>公告信息表</Comment>
       <Engine>InnoDB</Engine>
       <Options>row_format
 DYNAMIC</Options>
       <CollationName>utf8mb4_unicode_ci</CollationName>
     </table>
-    <table id="288" parent="274" name="user">
+    <table id="288" parent="278" name="user">
       <Comment>用户表</Comment>
       <Engine>InnoDB</Engine>
       <Options>row_format

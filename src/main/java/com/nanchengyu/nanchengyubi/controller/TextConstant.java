@@ -1,4 +1,4 @@
-package com.nanchengyu.nanchengyubi.constant;
+package com.nanchengyu.nanchengyubi.controller;
 
 /**
  * 图表常量

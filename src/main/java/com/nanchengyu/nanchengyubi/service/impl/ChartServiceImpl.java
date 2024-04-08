@@ -5,7 +5,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.nanchengyu.nanchengyubi.constant.ChartConstant;
 import com.nanchengyu.nanchengyubi.bizmq.BiMqMessageProducer;
 import com.nanchengyu.nanchengyubi.common.ErrorCode;
-import com.nanchengyu.nanchengyubi.constant.TextConstant;
+import com.nanchengyu.nanchengyubi.controller.TextConstant;
 import com.nanchengyu.nanchengyubi.exception.BusinessException;
 import com.nanchengyu.nanchengyubi.exception.ThrowUtils;
 import com.nanchengyu.nanchengyubi.manager.AiManager;
