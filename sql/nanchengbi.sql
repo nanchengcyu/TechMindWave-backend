@@ -1,20 +1,19 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : localhost_3308
+ Source Server         : 106.14.202.122
  Source Server Type    : MySQL
- Source Server Version : 50737
- Source Host           : localhost:3308
- Source Schema         : nanchengbi
+ Source Server Version : 80027
+ Source Host           : 106.14.202.122:3306
+ Source Schema         : techmindwave
 
  Target Server Type    : MySQL
- Target Server Version : 50737
+ Target Server Version : 80027
  File Encoding         : 65001
 
- Date: 25/08/2023 15:41:08
+ Date: 05/04/2024 16:44:33
 */
-create database techmindwave;
-use techmindwave;
+
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 
@@ -22,457 +21,241 @@ SET FOREIGN_KEY_CHECKS = 0;
 -- Table structure for ai_assistant
 -- ----------------------------
 DROP TABLE IF EXISTS `ai_assistant`;
-CREATE TABLE `ai_assistant`
-(
-    `id`             bigint(20)                                                    NOT NULL AUTO_INCREMENT COMMENT 'id',
-    `questionName`   varchar(256) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL     DEFAULT NULL COMMENT '问题名称',
-    `questionGoal`   text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci         NULL COMMENT '问题概述',
-    `questionResult` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci         NULL COMMENT '问答结果',
-    `questionType`   varchar(512) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL     DEFAULT NULL COMMENT '问题类型',
-    `questionStatus` varchar(128) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'wait' COMMENT 'wait-等待,running-生成中,succeed-成功生成,failed-生成失败',
-    `execMessage`    text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci         NULL COMMENT '执行信息',
-    `userId`         bigint(20)                                                    NULL     DEFAULT NULL COMMENT '创建用户 id',
-    `createTime`     datetime                                                      NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-    `updateTime`     datetime                                                      NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
-    `isDelete`       tinyint(4)                                                    NOT NULL DEFAULT 0 COMMENT '是否删除',
-    PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB
-  AUTO_INCREMENT = 1692864684501274626
-  CHARACTER SET = utf8mb4
-  COLLATE = utf8mb4_unicode_ci COMMENT = 'AI 问答助手信息表'
-  ROW_FORMAT = Dynamic;
+CREATE TABLE `ai_assistant`  (
+                                 `id` bigint NOT NULL AUTO_INCREMENT COMMENT 'id',
+                                 `questionName` varchar(256) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL COMMENT '问题名称',
+                                 `questionGoal` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL COMMENT '问题概述',
+                                 `questionResult` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL COMMENT '问答结果',
+                                 `questionType` varchar(512) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL COMMENT '问题类型',
+                                 `questionStatus` varchar(128) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'wait' COMMENT 'wait-等待,running-生成中,succeed-成功生成,failed-生成失败',
+                                 `execMessage` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL COMMENT '执行信息',
+                                 `userId` bigint NULL DEFAULT NULL COMMENT '创建用户 id',
+                                 `createTime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+                                 `updateTime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+                                 `isDelete` tinyint NOT NULL DEFAULT 0 COMMENT '是否删除',
+                                 PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 1775881650340917250 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = 'AI 问答助手信息表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of ai_assistant
 -- ----------------------------
-INSERT INTO `ai_assistant`
-VALUES (1690580971562217474, '你好', '你好', '', '', 'wait', NULL, 1690580805534887938, '2023-08-13 12:28:07',
-        '2023-08-13 12:28:07', 0);
-INSERT INTO `ai_assistant`
-VALUES (1690652344754216962, '如何学习做人', '如何学习做人', NULL, '如何学习做人', 'failed', NULL, 1690592362125934594,
-        '2023-08-13 17:11:44', '2023-08-13 17:12:53', 1);
-INSERT INTO `ai_assistant`
-VALUES (1690750131567161345, '你好', '你好', '你好！有什么我可以帮助你的问题吗？', '你好', 'succeed', NULL,
-        1690592362125934594, '2023-08-13 23:40:18', '2023-08-13 23:40:20', 0);
-INSERT INTO `ai_assistant`
-VALUES (1690751050283315201, '我想要一份简历，你能生成吗', '我想要一份简历，你能生成吗',
-        '当然可以帮你生成简历！以下是一份简单的简历模板，你可以按照自己的需求进行修改和填写。\n\n========================\n姓名：\n联系方式：\n地址：\n邮箱：\n\n教育背景：\n- 学历：（填写你的学历）\n- 毕业院校：（填写你的毕业院校）\n- 专业：（填写你的专业）\n- 在校经历或荣誉：（在校期间的活动、实习、奖项等）\n\n工作经历：\n- 公司名称：\n- 职位：\n- 工作时间：\n- 工作职责和成就：（简要描述你在该职位上承担的工作任务和取得的成绩）\n\n技能和特长：\n- 语言技能：（列举你精通的语言，如中文、英文等）\n- 技术技能：（列举你掌握的技能，如计算机操作、编程语言、软件应用等）\n- 其他特长：（列举你的其他特长或才能）\n\n个人项目：\n- 在校或工作期间参与的个人项目，包括项目名称、角色和贡献等。\n\n个人简介：\n- 简要介绍自己的个人特点、兴趣爱好和职业目标等。\n\n参考资料：\n- 提供1-2个人参考资料（如导师、主管等），包括姓名、职位、联系方式等。\n\n========================\n\n请根据自己的实际情况，将模板中的内容填写完整。祝你成功地制作出一份优秀的简历！如果还有其他问题，我很乐意帮助你。',
-        '我想要一份简历，你能生成吗', 'succeed', NULL, 1690592362125934594, '2023-08-13 23:43:57', '2023-08-13 23:44:10',
-        0);
-INSERT INTO `ai_assistant`
-VALUES (1690751134173589506, '我想要一份简历，你能生成吗', '我想要一份简历，你能生成吗',
-        '当然可以！我可以帮你生成一份简历。请告诉我你的个人信息，包括姓名、联系方式、教育背景、工作经历和技能。我将根据这些信息为你生成一份专业的简历。',
-        '我想要一份简历，你能生成吗', 'succeed', NULL, 1690592362125934594, '2023-08-13 23:44:17', '2023-08-13 23:44:20',
-        0);
-INSERT INTO `ai_assistant`
-VALUES (1690751139252891650, '我想要一份简历，你能生成吗', '我想要一份简历，你能生成吗', NULL,
-        '我想要一份简历，你能生成吗', 'failed', NULL, 1690592362125934594, '2023-08-13 23:44:18', '2023-08-13 23:45:24',
-        1);
-INSERT INTO `ai_assistant`
-VALUES (1690751163953147906, '我想要一份简历，你能生成吗', '我想要一份简历，你能生成吗',
-        '当然可以！请提供以下信息，我将帮您生成一份简历： \n1. 姓名\n2. 联系信息（电话号码和电子邮件地址）\n3. 教育背景（学历、学校名称、就读时间）\n4. 工作经验（公司名称、职位、工作时间，可附上主要职责和成就）\n5. 技能（具备的技能、证书或培训）\n6. 个人简介（个人特点、职业目标）\n请提供上述信息后，我将尽快帮您生成一份简历。',
-        '我想要一份简历，你能生成吗', 'succeed', NULL, 1690592362125934594, '2023-08-13 23:44:24', '2023-08-13 23:45:33',
-        1);
-INSERT INTO `ai_assistant`
-VALUES (1691395065563369473, '你好啊', '你好啊', '你好！有什么问题我可以帮你解答呢？', '你好啊', 'succeed', NULL,
-        1690946228361175042, '2023-08-15 18:23:02', '2023-08-15 18:23:06', 0);
-INSERT INTO `ai_assistant`
-VALUES (1692864281038589953, 'hello', 'hello', 'Hello! How can I assist you today?', 'hello', 'succeed', NULL,
-        1690946228361175042, '2023-08-19 19:41:11', '2023-08-19 19:41:11', 0);
-INSERT INTO `ai_assistant`
-VALUES (1692864684501274625, 'hello', 'hello', 'Hello! How can I help you today?', 'hello\n', 'succeed', NULL,
-        1690946228361175042, '2023-08-19 19:42:47', '2023-08-19 19:42:47', 0);
+INSERT INTO `ai_assistant` VALUES (1690580971562217474, '你好', '你好', '', '', 'wait', NULL, 1690580805534887938, '2023-08-13 12:28:07', '2024-04-01 00:03:59', 1);
+INSERT INTO `ai_assistant` VALUES (1690652344754216962, '如何学习做人', '如何学习做人', NULL, '如何学习做人', 'failed', NULL, 1690592362125934594, '2023-08-13 17:11:44', '2023-08-13 17:12:53', 1);
+INSERT INTO `ai_assistant` VALUES (1690750131567161345, '你好', '你好', '你好！有什么我可以帮助你的问题吗？', '你好', 'succeed', NULL, 1690592362125934594, '2023-08-13 23:40:18', '2023-08-13 23:40:20', 0);
+INSERT INTO `ai_assistant` VALUES (1690751050283315201, '我想要一份简历，你能生成吗', '我想要一份简历，你能生成吗', '当然可以帮你生成简历！以下是一份简单的简历模板，你可以按照自己的需求进行修改和填写。\n\n========================\n姓名：\n联系方式：\n地址：\n邮箱：\n\n教育背景：\n- 学历：（填写你的学历）\n- 毕业院校：（填写你的毕业院校）\n- 专业：（填写你的专业）\n- 在校经历或荣誉：（在校期间的活动、实习、奖项等）\n\n工作经历：\n- 公司名称：\n- 职位：\n- 工作时间：\n- 工作职责和成就：（简要描述你在该职位上承担的工作任务和取得的成绩）\n\n技能和特长：\n- 语言技能：（列举你精通的语言，如中文、英文等）\n- 技术技能：（列举你掌握的技能，如计算机操作、编程语言、软件应用等）\n- 其他特长：（列举你的其他特长或才能）\n\n个人项目：\n- 在校或工作期间参与的个人项目，包括项目名称、角色和贡献等。\n\n个人简介：\n- 简要介绍自己的个人特点、兴趣爱好和职业目标等。\n\n参考资料：\n- 提供1-2个人参考资料（如导师、主管等），包括姓名、职位、联系方式等。\n\n========================\n\n请根据自己的实际情况，将模板中的内容填写完整。祝你成功地制作出一份优秀的简历！如果还有其他问题，我很乐意帮助你。', '我想要一份简历，你能生成吗', 'succeed', NULL, 1690592362125934594, '2023-08-13 23:43:57', '2023-08-13 23:44:10', 0);
+INSERT INTO `ai_assistant` VALUES (1690751134173589506, '我想要一份简历，你能生成吗', '我想要一份简历，你能生成吗', '当然可以！我可以帮你生成一份简历。请告诉我你的个人信息，包括姓名、联系方式、教育背景、工作经历和技能。我将根据这些信息为你生成一份专业的简历。', '我想要一份简历，你能生成吗', 'succeed', NULL, 1690592362125934594, '2023-08-13 23:44:17', '2023-08-13 23:44:20', 0);
+INSERT INTO `ai_assistant` VALUES (1690751139252891650, '我想要一份简历，你能生成吗', '我想要一份简历，你能生成吗', NULL, '我想要一份简历，你能生成吗', 'failed', NULL, 1690592362125934594, '2023-08-13 23:44:18', '2023-08-13 23:45:24', 1);
+INSERT INTO `ai_assistant` VALUES (1690751163953147906, '我想要一份简历，你能生成吗', '我想要一份简历，你能生成吗', '当然可以！请提供以下信息，我将帮您生成一份简历： \n1. 姓名\n2. 联系信息（电话号码和电子邮件地址）\n3. 教育背景（学历、学校名称、就读时间）\n4. 工作经验（公司名称、职位、工作时间，可附上主要职责和成就）\n5. 技能（具备的技能、证书或培训）\n6. 个人简介（个人特点、职业目标）\n请提供上述信息后，我将尽快帮您生成一份简历。', '我想要一份简历，你能生成吗', 'succeed', NULL, 1690592362125934594, '2023-08-13 23:44:24', '2023-08-13 23:45:33', 1);
+INSERT INTO `ai_assistant` VALUES (1691395065563369473, '你好啊', '你好啊', '你好！有什么问题我可以帮你解答呢？', '你好啊', 'succeed', NULL, 1690946228361175042, '2023-08-15 18:23:02', '2023-08-15 18:23:06', 0);
+INSERT INTO `ai_assistant` VALUES (1692864281038589953, 'hello', 'hello', 'Hello! How can I assist you today?', 'hello', 'succeed', NULL, 1690946228361175042, '2023-08-19 19:41:11', '2023-08-19 19:41:11', 0);
+INSERT INTO `ai_assistant` VALUES (1692864684501274625, 'hello', 'hello', 'Hello! How can I help you today?', 'hello\n', 'succeed', NULL, 1690946228361175042, '2023-08-19 19:42:47', '2023-08-19 19:42:47', 0);
+INSERT INTO `ai_assistant` VALUES (1773546445852680193, 'Java学习指南', '我是一个Java初学者，请告诉我Java应该怎么学', '问题类型：Java学习指南\n问题名称：Java学习指南\n问题概述：我是一个Java初学者，请告诉我Java应该怎么学\n\n答案：\n\n作为一个Java初学者，你可以按照以下步骤来学习Java：\n\n1. **了解Java基础**：\n   - 阅读Java的基础教程，了解Java的基本概念，如数据类型、变量、运算符、控制结构等。\n   - 学习Java的面向对象编程（OOP）概念，包括类、对象、继承、封装和多态性。\n\n2. **设置开发环境**：\n   - 安装Java Development Kit (JDK)，这是编写和运行Java程序所必需的。\n   - 选择一个合适的集成开发环境（IDE），如Eclipse或IntelliJ IDEA，这些工具可以帮助你更高效地编写代码。\n\n3. **实践编程**：\n   - 开始编写简单的Java程序，如“Hello World”程序，逐步增加难度。\n   - 练习编写使用基本数据结构的小程序，例如数组、列表和映射。\n\n4. **深入学习**：\n   - 学习Java集合框架，了解List、Set、Map等接口及其实现。\n   - 学习异常处理和文件I/O操作。\n   - 理解Java多线程和并发编程的概念。\n\n5. **掌握高级概念**：\n   - 学习Java网络编程，了解如何使用Java进行网络通信。\n   - 学习数据库编程，了解如何使用JDBC连接和操作数据库。\n   - 学习Java Web开发，包括Servlets、JSP和Spring框架。\n\n6. **构建项目**：\n   - 开始构建自己的小项目，这可以是一个简单的管理系统、游戏或者其他任何你感兴趣的应用程序。\n   - 参与开源项目或贡献代码，这是提高编程技能的好方法。\n\n7. **获取资源和社区支持**：\n   - 加入Java相关的论坛和社区，如Stack Overflow、GitHub或本地的编程小组。\n   - 阅读Java相关的书籍和在线资源，如官方文档、博客文章和教程。\n\n8. **持续学习和适应变化**：\n   - Java是一个不断发展的语言，要跟上最新的技术和最佳实践。\n   - 定期检查新版本的Java特性，并尝试在你的项目中应用它们。\n\n记住，学习编程是一个循序渐进的过程，不要急于求成。实践是学习编程的关键，所以尽可能多地编写代码，并从错误中学习。随着时间的推移，你会逐渐提高你的Java编程技能。', 'Java学习指南', 'succeed', NULL, 1690946228361175042, '2024-03-29 03:03:17', '2024-03-29 14:01:28', 1);
+INSERT INTO `ai_assistant` VALUES (1773546488294842369, 'Java学习指南', '我是一个Java初学者，请告诉我Java应该怎么学', '问题类型：Java学习指南\n问题名称：Java学习指南\n问题概述：我是一个Java初学者，请告诉我Java应该怎么学\n\n答案：\n作为一个Java初学者，你可以按照以下步骤来学习Java：\n\n1. **基础知识**：\n   - 学习Java的基本概念，如数据类型、变量、运算符、控制流程（if-else, switch, for, while等）。\n   - 理解面向对象编程（OOP）的基本概念，包括类、对象、继承、封装和多态性。\n\n2. **开发环境搭建**：\n   - 安装Java Development Kit (JDK)。\n   - 选择一个合适的集成开发环境（IDE），如Eclipse或IntelliJ IDEA，并熟悉其使用。\n\n3. **实践编程**：\n   - 开始编写简单的Java程序，如“Hello World”。\n   - 练习编写使用基本数据结构的程序，例如数组和字符串。\n\n4. **核心API学习**：\n   - 学习Java标准库，如集合框架（List, Set, Map等）、异常处理、输入输出（I/O）等。\n\n5. **高级概念**：\n   - 深入理解泛型、多线程和网络编程。\n   - 学习Java新特性，如Lambda表达式、Stream API等。\n\n6. **构建项目**：\n   - 开始小型项目，将所学知识应用到实际中。\n   - 逐步增加项目的复杂度，以提升解决问题的能力。\n\n7. **学习资源**：\n   - 阅读Java编程书籍，如《Head First Java》、《Effective Java》等。\n   - 参加在线课程和教程，如Coursera、Udemy上的Java课程。\n   - 加入Java社区和论坛，如Stack Overflow、GitHub，参与讨论和解决问题。\n\n8. **持续实践**：\n   - 不断编写代码，实践是提高编程技能的最佳方式。\n   - 阅读和分析其他人的代码，了解不同的编程风格和最佳实践。\n\n9. **获取认证**：\n   - 如果可能，可以考虑获得Oracle Certified Professional Java Programmer认证，这有助于职业发展。\n\n记住，学习编程是一个循序渐进的过程，不要急于求成。理解基础概念是非常重要的，之后通过不断的实践和学习来提升自己的技能。', 'Java学习指南', 'succeed', NULL, 1690946228361175042, '2024-03-29 03:03:28', '2024-03-29 14:24:29', 1);
+INSERT INTO `ai_assistant` VALUES (1773547028038852610, 'Java学习指南', '我是一个Java初学者，请告诉我Java应该怎么学', '问题类型：Java学习指南\n\n问题名称：Java学习指南\n\n问题概述：我是一个Java初学者，请告诉我Java应该怎么学\n\n答案：\n\n作为Java初学者，你可以按照以下步骤来学习Java：\n\n1. **了解Java基础**：\n   - 阅读关于Java的历史和特性。\n   - 了解Java的运行环境（JRE和JDK）。\n   - 学习基本的编程概念，如变量、数据类型、控制结构等。\n\n2. **配置开发环境**：\n   - 安装Java Development Kit (JDK)。\n   - 选择一个合适的集成开发环境（IDE），如IntelliJ IDEA、Eclipse或NetBeans。\n\n3. **学习Java语法**：\n   - 掌握Java的基本语法，包括类、对象、方法、继承、封装和多态性。\n   - 学习如何使用Java的核心类库，例如集合框架、输入输出流等。\n\n4. **实践编程**：\n   - 开始编写简单的Java程序，如“Hello World”。\n   - 逐步增加难度，尝试编写使用循环、条件语句和数组的程序。\n\n5. **深入学习**：\n   - 学习高级主题，如异常处理、泛型、多线程和网络编程。\n   - 理解Java的内存管理和垃圾回收机制。\n\n6. **构建项目**：\n   - 开始小型项目，将所学知识应用到实际中。\n   - 参与开源项目或贡献代码，以获得实际的编程经验。\n\n7. **学习框架和工具**：\n   - 学习流行的Java框架，如Spring、Hibernate和MyBatis。\n   - 熟悉构建工具（如Maven或Gradle）和版本控制系统（如Git）。\n\n8. **持续学习**：\n   - 阅读Java相关的书籍和在线资源。\n   - 关注Java社区，参加研讨会和技术会议。\n   - 定期练习编程，解决编程挑战和算法问题。\n\n9. **获取认证**：\n   - 考虑获取Oracle Certified Professional Java Programmer (OCPJP)等认证，以提高你的专业技能和就业竞争力。\n\n记住，学习编程是一个循序渐进的过程，不要急于求成。理论学习和实践编程应该并重，通过不断的练习和项目经验来提高你的编程技能。', 'Java学习指南', 'succeed', NULL, 1690946228361175042, '2024-03-29 03:05:36', '2024-03-29 03:06:14', 0);
+INSERT INTO `ai_assistant` VALUES (1773547413847711745, '你好啊', '你好啊', '问题类型：问候\n问题名称：你好啊\n问题概述：这是一种常见的问候方式，用于向对方表示友好和礼貌。', '你好啊\n', 'succeed', NULL, 1690946228361175042, '2024-03-29 03:07:08', '2024-03-29 03:32:27', 1);
+INSERT INTO `ai_assistant` VALUES (1773596661888897025, '我最近心事不佳', '我最近心事不佳', '问题类型：\n\n心理疏导\n\n问题名称：\n\n我最近心事不佳\n\n问题概述：\n\n您提到最近心情不佳，这可能是由于生活压力、工作疲劳、人际关系等原因引起的。以下是一些建议，希望能帮助您缓解心情：\n\n1.  *倾诉与分享*:找一个值得信赖的朋友或家人，将您的烦恼和担忧说出来，有时候说出来会让您感觉轻松很多。\n\n2.  *写日记*:将您的感受和想法写下来，有助于理清思绪，也是一种很好的情绪宣泄方式。\n\n3.  *运动*:适量的运动可以帮助释放体内的紧张和压力，如散步、跑步、瑜伽等。\n\n4.  *冥想与深呼吸*:冥想和深呼吸可以帮助您放松身心，减轻焦虑和压力。\n\n5.  *调整作息*:保证充足的睡眠，避免熬夜，保持规律的作息。\n\n6.  *兴趣爱好*:投身于自己喜欢的事情中，如阅读、画画、听音乐等，可以转移注意力，减轻心情不佳的状况。\n\n7.  *寻求专业帮助*:如果您觉得自己的心情长时间无法得到改善，或者影响到了日常生活，建议寻求心理咨询师或心理医生的帮助。\n\n请记住，每个人都会有低落的时候，这是正常的。关键是要学会调整自己的心态，积极面对生活中的困难和挑战。希望这些建议能对您有所帮助。', '我最近心事不佳，如何解决呢？请疏导下我。', 'succeed', NULL, 1690946228361175042, '2024-03-29 14:22:50', '2024-03-29 14:22:58', 0);
+INSERT INTO `ai_assistant` VALUES (1773743943502303233, '面试时的一些场景类问题回答技巧', '面试时的一些场景类问题回答技巧', '问题类型：面试技巧\n\n问题名称：如何在面试中回答场景类问题\n\n问题概述：在面试过程中，面试官可能会提出一些场景类问题，用以考察应聘者的应变能力、解决问题的能力以及是否具备相关工作经验。这些问题通常以“如果...你会怎么做？”的形式出现，要求应聘者根据假设的工作场景给出具体的解决方案。为了有效地回答这类问题，以下是一些技巧：\n\n1. 保持冷静：首先，深呼吸，保持冷静。紧张状态可能会影响你的思考，所以尽量放松，让自己处于一个可以清晰思考的状态。\n\n2. 理解问题：仔细听面试官的问题，确保你完全理解了问题的背景和要求。如果有疑问，可以适当地要求面试官澄清或重复问题。\n\n3. 结构化回答：使用STAR（Situation-Task-Action-Result）方法来组织你的回答。先描述情境（Situation），然后是你的任务（Task），接着是你采取的行动（Action），最后是结果（Result）。\n\n4. 具体举例：提供一个实际的例子来展示你是如何处理类似情况的。如果你没有直接的经验，可以谈论一个类似的情况或者你如何计划处理这种情况。\n\n5. 显示逻辑和条理性：在回答问题时，确保你的答案是有逻辑和条理性的。这表明你能够系统地解决问题。\n\n6. 强调团队合作：如果场景涉及到团队工作，确保强调你如何与团队成员合作，以及你如何贡献团队的成功。\n\n7. 显示积极态度：即使描述的是一个困难的情况，也要展示你的积极态度和解决问题的决心。\n\n8. 关注细节：在描述你的行动和结果时，注意细节，这可以帮助面试官更好地理解你的方法。\n\n9. 练习：在面试前，与朋友或家人练习回答这类问题，这样可以帮助你在实际面试中更加自信和流畅。\n\n10. 反馈和学习：每次面试后，回顾你的答案，考虑你做得好的地方和可以改进的地方。这将帮助你为下一次面试做好准备。\n\n通过以上技巧，你可以更有效地回答面试中的场景类问题，展示你的能力和潜力。记住，这些技巧需要在实际面试中不断练习和完善，所以不断地准备和反思是非常重要的。', '在紧张状态下，面试时的一些场景类问题回答技巧', 'succeed', NULL, 1690946228361175042, '2024-03-30 00:08:04', '2024-03-30 00:08:27', 0);
+INSERT INTO `ai_assistant` VALUES (1774468313396887554, '你好啊', '你好啊', '问题类型：问候\n问题名称：你好啊\n问题概述：这是一个用于表示友好和礼貌的问候语，通常用于与他人进行简单的交流。', '你好啊', 'succeed', NULL, 1774468198644924417, '2024-04-01 00:06:27', '2024-04-01 00:06:30', 0);
+INSERT INTO `ai_assistant` VALUES (1775881650340917249, '论文怎么写？', '我是一个本科生，马上要毕业了，论文怎么写？', '问题类型：计算机论文书写\n问题名称：如何撰写本科毕业论文？\n问题概述：\n作为一个即将毕业的本科生，你可能对如何开始和完成你的毕业论文感到困惑。撰写本科毕业论文是一个系统的过程，需要你进行研究、组织材料、撰写和编辑。以下是一些基本步骤，可以帮助你开始写作：\n\n1. 选题与研究方向：\n   - 选择一个你感兴趣的主题，这将有助于你保持动力。\n   - 确保主题具有研究价值，并且有足够的资料可以查阅。\n   - 与导师讨论你的选题，确保它适合你的专业和学术要求。\n\n2. 文献回顾：\n   - 阅读相关的书籍、期刊文章和其他资源，以了解你的研究领域的现状。\n   - 记录关键的理论、研究和论点，这些将支持你的论文。\n\n3. 研究方法：\n   - 确定你将如何收集和分析数据。\n   - 如果你的研究是实验性的，设计一个清晰的实验计划。\n   - 如果是调查或案例研究，确保你的方法论是合理的。\n\n4. 论文结构：\n   - 遵循学校或学院提供的论文格式指南。\n   - 通常，论文包括以下部分：引言、文献综述、方法论、结果、讨论、结论和参考文献。\n\n5. 写作过程：\n   - 制定一个写作计划，为每个部分设定截止日期。\n   - 从大纲开始，逐步填充每个部分的内容。\n   - 保持清晰和逻辑性，确保你的论点有据可依。\n\n6. 引用与参考文献：\n   - 使用适当的引用风格（如APA、MLA、Chicago等）。\n   - 确保所有引用的信息都有详细的参考文献记录。\n\n7. 审稿与修改：\n   - 完成初稿后，进行多轮审稿和修改。\n   - 检查语法错误、拼写错误和格式问题。\n   - 可以请同学或导师提供反馈。\n\n8. 最终提交：\n   - 根据反馈进行最后的修改。\n   - 确保所有章节和格式符合要求。\n   - 在截止日期前提交你的论文。\n\n记住，写作是一个迭代的过程，可能需要多次修改才能达到满意的水平。保持耐心，按部就班，你将能够完成你的本科毕业论文。', '计算机论文书写', 'succeed', NULL, 1690946228361175042, '2024-04-04 21:42:34', '2024-04-04 21:43:02', 0);
 
 -- ----------------------------
 -- Table structure for ai_frequency
 -- ----------------------------
 DROP TABLE IF EXISTS `ai_frequency`;
-CREATE TABLE `ai_frequency`
-(
-    `id`              bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
-    `userId`          bigint(20) NOT NULL COMMENT '用户 id',
-    `totalFrequency`  bigint(20) NOT NULL DEFAULT 0 COMMENT '总调用次数',
-    `remainFrequency` int(11)    NOT NULL DEFAULT 5 COMMENT '剩余调用次数',
-    `createTime`      datetime   NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-    `updateTime`      datetime   NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
-    `isDelete`        tinyint(4) NOT NULL DEFAULT 0 COMMENT '是否删除',
-    PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB
-  AUTO_INCREMENT = 1690946228424089602
-  CHARACTER SET = utf8mb4
-  COLLATE = utf8mb4_unicode_ci COMMENT = 'ai调用次数表'
-  ROW_FORMAT = Dynamic;
+CREATE TABLE `ai_frequency`  (
+                                 `id` bigint NOT NULL AUTO_INCREMENT COMMENT 'id',
+                                 `userId` bigint NOT NULL COMMENT '用户 id',
+                                 `totalFrequency` bigint NOT NULL DEFAULT 0 COMMENT '总调用次数',
+                                 `remainFrequency` int NOT NULL DEFAULT 5 COMMENT '剩余调用次数',
+                                 `createTime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+                                 `updateTime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+                                 `isDelete` tinyint NOT NULL DEFAULT 0 COMMENT '是否删除',
+                                 PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 1774468199114686467 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = 'ai调用次数表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of ai_frequency
 -- ----------------------------
-INSERT INTO `ai_frequency`
-VALUES (1690580805534887939, 1690580805534887938, 0, 5, '2023-08-13 12:27:28', '2023-08-13 12:27:28', 0);
-INSERT INTO `ai_frequency`
-VALUES (1690592362155294721, 1690592362125934594, 4, 1, '2023-08-13 13:13:23', '2023-08-13 13:13:23', 0);
-INSERT INTO `ai_frequency`
-VALUES (1690741578617942019, 1690741578617942018, 0, 5, '2023-08-13 23:06:19', '2023-08-13 23:06:19', 0);
-INSERT INTO `ai_frequency`
-VALUES (1690946228424089601, 1690946228361175042, 4, 1, '2023-08-14 12:39:31', '2023-08-14 12:39:31', 0);
+INSERT INTO `ai_frequency` VALUES (1690580805534887939, 1690580805534887938, 0, 5, '2023-08-13 12:27:28', '2023-08-13 12:27:28', 0);
+INSERT INTO `ai_frequency` VALUES (1690592362155294721, 1690592362125934594, 4, 1, '2023-08-13 13:13:23', '2023-08-13 13:13:23', 0);
+INSERT INTO `ai_frequency` VALUES (1690741578617942019, 1690741578617942018, 0, 5, '2023-08-13 23:06:19', '2023-08-13 23:06:19', 0);
+INSERT INTO `ai_frequency` VALUES (1690946228424089601, 1690946228361175042, 13, 987, '2023-08-14 12:39:31', '2024-03-29 13:51:40', 0);
+INSERT INTO `ai_frequency` VALUES (1773738869443039234, 1773738868964888578, 0, 5, '2024-03-29 23:47:55', '2024-03-29 23:47:55', 0);
+INSERT INTO `ai_frequency` VALUES (1774468199114686466, 1774468198644924417, 1, 4, '2024-04-01 00:06:00', '2024-04-01 00:06:00', 0);
 
 -- ----------------------------
 -- Table structure for ai_frequency_order
 -- ----------------------------
 DROP TABLE IF EXISTS `ai_frequency_order`;
-CREATE TABLE `ai_frequency_order`
-(
-    `id`               bigint(20)    NOT NULL AUTO_INCREMENT COMMENT 'id',
-    `userId`           bigint(20)    NOT NULL COMMENT '用户 id',
-    `purchaseQuantity` bigint(20)    NOT NULL COMMENT '购买数量',
-    `price`            float(255, 2) NOT NULL COMMENT '单价',
-    `totalAmount`      float(10, 2)  NOT NULL COMMENT '交易金额',
-    `orderStatus`      int(11)       NOT NULL DEFAULT 0 COMMENT '交易状态【0->待付款；1->已完成；2->无效订单,3->删除订单】',
-    `createTime`       datetime      NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-    `updateTime`       datetime      NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
-    `isDelete`         tinyint(4)    NOT NULL DEFAULT 0 COMMENT '是否删除',
-    PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB
-  AUTO_INCREMENT = 1692066442121330690
-  CHARACTER SET = utf8mb4
-  COLLATE = utf8mb4_unicode_ci COMMENT = '次数订单表'
-  ROW_FORMAT = Dynamic;
+CREATE TABLE `ai_frequency_order`  (
+                                       `id` bigint NOT NULL AUTO_INCREMENT COMMENT 'id',
+                                       `userId` bigint NOT NULL COMMENT '用户 id',
+                                       `purchaseQuantity` bigint NOT NULL COMMENT '购买数量',
+                                       `price` float(255, 2) NOT NULL COMMENT '单价',
+                                       `totalAmount` float(10, 2) NOT NULL COMMENT '交易金额',
+                                       `orderStatus` int NOT NULL DEFAULT 0 COMMENT '交易状态【0->待付款；1->已完成；2->无效订单,3->删除订单】',
+                                       `createTime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+                                       `updateTime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+                                       `isDelete` tinyint NOT NULL DEFAULT 0 COMMENT '是否删除',
+                                       PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 1775884256165523459 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '次数订单表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of ai_frequency_order
 -- ----------------------------
-INSERT INTO `ai_frequency_order`
-VALUES (1690750380054507521, 1690592362125934594, 5, 0.10, 0.50, 2, '2023-08-13 23:41:17', '2023-08-14 09:15:08', 0);
-INSERT INTO `ai_frequency_order`
-VALUES (1691346191431847938, 1690946228361175042, 1, 0.10, 0.10, 2, '2023-08-15 15:08:50', '2023-08-15 15:18:50', 0);
-INSERT INTO `ai_frequency_order`
-VALUES (1692066442121330689, 1690946228361175042, 1, 0.10, 0.10, 2, '2023-08-17 14:50:51', '2023-08-17 15:00:51', 0);
+INSERT INTO `ai_frequency_order` VALUES (1690750380054507521, 1690592362125934594, 5, 0.10, 0.50, 2, '2023-08-13 23:41:17', '2023-08-14 09:15:08', 0);
+INSERT INTO `ai_frequency_order` VALUES (1691346191431847938, 1690946228361175042, 1, 0.10, 0.10, 2, '2023-08-15 15:08:50', '2024-04-02 10:25:53', 1);
+INSERT INTO `ai_frequency_order` VALUES (1692066442121330689, 1690946228361175042, 1, 0.10, 0.10, 2, '2023-08-17 14:50:51', '2024-04-02 10:25:49', 1);
+INSERT INTO `ai_frequency_order` VALUES (1774986174544539650, 1690946228361175042, 1, 0.10, 0.10, 0, '2024-04-02 10:24:16', '2024-04-02 10:25:45', 1);
+INSERT INTO `ai_frequency_order` VALUES (1774986259760214018, 1690946228361175042, 1, 0.10, 0.10, 0, '2024-04-02 10:24:37', '2024-04-02 10:25:41', 1);
+INSERT INTO `ai_frequency_order` VALUES (1774986610051706882, 1690946228361175042, 100, 0.10, 10.00, 1, '2024-04-02 10:26:00', '2024-04-04 21:52:33', 0);
+INSERT INTO `ai_frequency_order` VALUES (1775883266741792770, 1690946228361175042, 100, 0.10, 10.00, 1, '2024-04-04 21:48:59', '2024-04-04 21:52:08', 0);
+INSERT INTO `ai_frequency_order` VALUES (1775884256165523458, 1690946228361175042, 10, 0.10, 1.00, 0, '2024-04-04 21:52:55', '2024-04-04 21:52:55', 0);
 
 -- ----------------------------
 -- Table structure for alipay_info
 -- ----------------------------
 DROP TABLE IF EXISTS `alipay_info`;
-CREATE TABLE `alipay_info`
-(
-    `id`              bigint(20)                                                     NOT NULL AUTO_INCREMENT COMMENT 'id',
-    `userId`          bigint(20)                                                     NOT NULL COMMENT '用户 id',
-    `alipayAccountNo` varchar(512) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci  NOT NULL COMMENT '支付宝流水账号',
-    `alipayId`        varchar(1024) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL     DEFAULT NULL COMMENT '支付宝唯一id',
-    `orderId`         bigint(20)                                                     NULL     DEFAULT NULL COMMENT '订单id',
-    `totalAmount`     float(10, 2)                                                   NOT NULL COMMENT '交易金额',
-    `payStatus`       int(11)                                                        NOT NULL DEFAULT 0 COMMENT '交易状态【0->未支付；1->已完成；2->支付失败】',
-    `createTime`      datetime                                                       NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '支付时间',
-    `updateTime`      datetime                                                       NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
-    `isDelete`        tinyint(4)                                                     NOT NULL DEFAULT 0 COMMENT '是否删除',
-    PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB
-  AUTO_INCREMENT = 1692067475182600194
-  CHARACTER SET = utf8mb4
-  COLLATE = utf8mb4_unicode_ci COMMENT = '支付宝订单表'
-  ROW_FORMAT = Dynamic;
+CREATE TABLE `alipay_info`  (
+                                `id` bigint NOT NULL AUTO_INCREMENT COMMENT 'id',
+                                `userId` bigint NOT NULL COMMENT '用户 id',
+                                `alipayAccountNo` varchar(512) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '支付宝流水账号',
+                                `alipayId` varchar(1024) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL COMMENT '支付宝唯一id',
+                                `orderId` bigint NULL DEFAULT NULL COMMENT '订单id',
+                                `totalAmount` float(10, 2) NOT NULL COMMENT '交易金额',
+                                `payStatus` int NOT NULL DEFAULT 0 COMMENT '交易状态【0->未支付；1->已完成；2->支付失败】',
+                                `createTime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '支付时间',
+                                `updateTime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+                                `isDelete` tinyint NOT NULL DEFAULT 0 COMMENT '是否删除',
+                                PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 1775883297708339202 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '次数订单表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of alipay_info
 -- ----------------------------
-INSERT INTO `alipay_info`
-VALUES (1690750426309292033, 1690592362125934594, '1690750426310000640', NULL, 1690750380054507521, 10000.00, 0,
-        '2023-08-13 23:41:28', '2023-08-13 23:45:53', 0);
-INSERT INTO `alipay_info`
-VALUES (1692066470323830786, 1690946228361175042, '1692066470320254976', NULL, 1692066442121330689, 0.10, 0,
-        '2023-08-17 14:50:58', '2023-08-17 14:50:58', 0);
-INSERT INTO `alipay_info`
-VALUES (1692067475182600193, 1690946228361175042, '1692067475237744640', NULL, 1692066442121330689, 0.10, 0,
-        '2023-08-17 14:54:57', '2023-08-17 14:54:57', 0);
+INSERT INTO `alipay_info` VALUES (1690750426309292033, 1690592362125934594, '1690750426310000640', NULL, 1690750380054507521, 10000.00, 0, '2023-08-13 23:41:28', '2023-08-13 23:45:53', 0);
+INSERT INTO `alipay_info` VALUES (1692066470323830786, 1690946228361175042, '1692066470320254976', NULL, 1692066442121330689, 0.10, 0, '2023-08-17 14:50:58', '2023-08-17 14:50:58', 0);
+INSERT INTO `alipay_info` VALUES (1692067475182600193, 1690946228361175042, '1692067475237744640', NULL, 1692066442121330689, 0.10, 0, '2023-08-17 14:54:57', '2023-08-17 14:54:57', 0);
+INSERT INTO `alipay_info` VALUES (1774986647964020738, 1690946228361175042, '1774986648004866048', NULL, 1774986610051706882, 10.00, 0, '2024-04-02 10:26:09', '2024-04-02 10:26:09', 0);
+INSERT INTO `alipay_info` VALUES (1775549845507170306, 1690946228361175042, '1775549845503229952', NULL, 1774986610051706882, 10.00, 0, '2024-04-03 23:44:04', '2024-04-03 23:44:04', 0);
+INSERT INTO `alipay_info` VALUES (1775883297708339201, 1690946228361175042, '1775883297757270016', NULL, 1775883266741792770, 10.00, 1, '2024-04-04 21:49:07', '2024-04-04 21:50:39', 0);
 
 -- ----------------------------
 -- Table structure for chart
 -- ----------------------------
 DROP TABLE IF EXISTS `chart`;
-CREATE TABLE `chart`
-(
-    `id`          bigint(20)                                                    NOT NULL AUTO_INCREMENT COMMENT 'id',
-    `goal`        text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci         NULL COMMENT '分析目标',
-    `chartName`   varchar(256) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL     DEFAULT NULL COMMENT '图表名称',
-    `chartData`   text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci         NULL COMMENT '图表数据',
-    `chartType`   varchar(256) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL     DEFAULT NULL COMMENT '图表类型',
-    `genChart`    text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci         NULL COMMENT '生成的图表信息',
-    `genResult`   text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci         NULL COMMENT '生成的分析结论',
-    `chartStatus` varchar(128) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'wait' COMMENT 'wait-等待,running-生成中,succeed-成功生成,failed-生成失败',
-    `execMessage` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci         NULL COMMENT '执行信息',
-    `userId`      bigint(20)                                                    NULL     DEFAULT NULL COMMENT '创建图标用户 id',
-    `createTime`  datetime                                                      NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-    `updateTime`  datetime                                                      NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
-    `isDelete`    tinyint(4)                                                    NOT NULL DEFAULT 0 COMMENT '是否删除',
-    PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB
-  AUTO_INCREMENT = 1692864147542282242
-  CHARACTER SET = utf8mb4
-  COLLATE = utf8mb4_unicode_ci COMMENT = '图表信息表'
-  ROW_FORMAT = Dynamic;
+CREATE TABLE `chart`  (
+                          `id` bigint NOT NULL AUTO_INCREMENT COMMENT 'id',
+                          `goal` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL COMMENT '分析目标',
+                          `chartName` varchar(256) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL COMMENT '图表名称',
+                          `chartData` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL COMMENT '图表数据',
+                          `chartType` varchar(256) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL COMMENT '图表类型',
+                          `genChart` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL COMMENT '生成的图表信息',
+                          `genResult` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL COMMENT '生成的分析结论',
+                          `chartStatus` varchar(128) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'wait' COMMENT 'wait-等待,running-生成中,succeed-成功生成,failed-生成失败',
+                          `execMessage` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL COMMENT '执行信息',
+                          `userId` bigint NULL DEFAULT NULL COMMENT '创建图标用户 id',
+                          `createTime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+                          `updateTime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+                          `isDelete` tinyint NOT NULL DEFAULT 0 COMMENT '是否删除',
+                          PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 1772096035459739651 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '图表信息表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of chart
 -- ----------------------------
-INSERT INTO `chart`
-VALUES (1690652196070334465, 'nanchengyu网站数据分析', 'nanchengyu', '日期,用户数量\n1,20\n2,40\n3,600\n', '玫瑰图',
-        '{\n  \"tooltip\": {},\n  \"series\": [\n    {\n      \"name\": \"用户数量\",\n      \"type\": \"pie\",\n      \"data\": [\n        {\"value\": 20, \"name\": \"1\"},\n        {\"value\": 40, \"name\": \"2\"},\n        {\"value\": 600, \"name\": \"3\"}\n      ],\n      \"roseType\": \"radius\",\n      \"label\": {\n        \"show\": true,\n        \"position\": \"inside\"\n      },\n      \"emphasis\": {\n        \"itemStyle\": {\n          \"shadowBlur\": 10,\n          \"shadowOffsetX\": 0,\n          \"shadowColor\": \"rgba(0, 0, 0, 0.5)\"\n        }\n      }\n    }\n  ]\n}',
-        '根据数据分析结果，可以看出nanchengyu网站的用户数量在第3天出现了显著增长，从40增加到了600。这表明在第3天有大量用户访问了该网站。前两天的用户数量相对较少，说明该网站的用户活跃度在第3天有了明显提升。',
-        'succeed', NULL, 1690592362125934594, '2023-08-13 17:11:09', '2023-08-13 19:17:42', 1);
-INSERT INTO `chart`
-VALUES (1690750045223219202, '南城网站用户增长趋势图', '南城网站用户增长趋势图', '日期,用户数量\n1,20\n2,40\n3,600\n',
-        '玫瑰图',
-        '{\n  \"tooltip\": {},\n  \"grid\": {},\n  \"polar\": {},\n  \"angleAxis\": {\n    \"type\": \"category\",\n    \"data\": [\"1\", \"2\", \"3\"]\n  },\n  \"radiusAxis\": {},\n  \"series\": [\n    {\n      \"type\": \"bar\",\n      \"data\": [20, 40, 600],\n      \"coordinateSystem\": \"polar\",\n      \"barCategoryGap\": \"1\",\n      \"label\": {\n        \"show\": true,\n        \"position\": \"top\",\n        \"formatter\": \"{b}\\n{c}\"\n      }\n    }\n  ]\n}',
-        '根据数据分析，南城网站用户数量呈现出明显的增长趋势。在第1天，用户数量为20；第2天，用户数量增加至40；第3天，用户数量激增至600。从数据中可以观察到，用户数量的增长速度非常快。根据这个趋势，可以得出结论：南城网站的用户增长非常迅速。',
-        'succeed', NULL, 1690592362125934594, '2023-08-13 23:39:58', '2023-08-14 18:23:53', 1);
-INSERT INTO `chart`
-VALUES (1691017451925446658, '龙哥网站数据人数分析', '龙哥网站数据分析图', '日期,用户数量\n1,20\n2,40\n3,600\n',
-        '雷达图',
-        '{\n  \"title\": {\n    \"text\": \"龙哥网站数据人数分析\",\n    \"subtext\": \"用户数量\"\n  },\n  \"tooltip\": {\n    \"trigger\": \"axis\"\n  },\n  \"radar\": {\n    \"indicator\": [\n      {\n        \"name\": \"1\",\n        \"max\": 600\n      },\n      {\n        \"name\": \"2\",\n        \"max\": 600\n      },\n      {\n        \"name\": \"3\",\n        \"max\": 600\n      }\n    ]\n  },\n  \"series\": [\n    {\n      \"name\": \"用户数量\",\n      \"type\": \"radar\",\n      \"data\": [\n        {\n          \"value\": [20, 40, 600],\n          \"name\": \"用户数量\"\n        }\n      ]\n    }\n  ]\n}',
-        '根据数据分析，龙哥网站在不同日期的用户数量呈现较大的差异。具体来说，第一天的用户数量为20人，第二天的用户数量为40人，而第三天的用户数量达到了600人。通过雷达图的可视化形式，可以直观地展示出每天的用户数量情况。从图中可以明显看出，第三天的用户数量远超过前两天，说明在第三天有一次较大规模的用户增长。这可能是由于某种推广活动或者宣传效果好所导致的。需进一步分析原因，以便针对性地进行后续的运营策略和推广活动。总体而言，龙哥网站的用户数量呈现出良好的增长态势，但仍需要不断努力提升。',
-        'succeed', NULL, 1690946228361175042, '2023-08-14 17:22:32', '2023-08-14 17:22:32', 0);
-INSERT INTO `chart`
-VALUES (1691359037385428994, '我想要获取下我的网站用户增长趋势', 'TechMindWave网站用户增长趋势图',
-        '日期,用户数量\n1,20\n2,40\n3,600\n', '雷达图',
-        '{\n  \"title\": {\n    \"text\": \"网站用户增长趋势\",\n    \"subtext\": \"数据来源：原始数据\"\n  },\n  \"tooltip\": {},\n  \"radar\": {\n    \"name\": {\n      \"textStyle\": {\n        \"color\": \"#fff\",\n        \"backgroundColor\": \"#999\",\n        \"borderColor\": \"#000\",\n        \"borderWidth\": 1,\n        \"borderRadius\": 3,\n        \"padding\": [3, 5]\n      }\n    },\n    \"indicator\": [\n      { \"name\": \"1\", \"max\": 600 },\n      { \"name\": \"2\", \"max\": 600 },\n      { \"name\": \"3\", \"max\": 600 }\n    ]\n  },\n  \"series\": [{\n    \"type\": \"radar\",\n    \"data\": [\n      {\n        \"name\": \"用户数量\",\n        \"value\": [20, 40, 600]\n      }\n    ]\n  }]\n}',
-        '根据提供的原始数据，通过雷达图可以看出，在1号有20个用户，2号有40个用户，3号急剧增长到600个用户。', 'succeed', NULL,
-        1690946228361175042, '2023-08-15 15:59:53', '2023-08-15 15:59:53', 0);
-INSERT INTO `chart`
-VALUES (1692864147542282241, '你好网用户', '你好网用户', '日期,用户数量\n1,20\n2,40\n3,600\n', '玫瑰图',
-        '{\n  \"title\": {\n    \"text\": \"用户数量玫瑰图\"\n  },\n  \"legend\": {},\n  \"series\": [\n    {\n      \"name\": \"用户数量\",\n      \"type\": \"pie\",\n      \"data\": [\n        { \"value\": 20, \"name\": \"1\" },\n        { \"value\": 40, \"name\": \"2\" },\n        { \"value\": 600, \"name\": \"3\" }\n      ],\n      \"roseType\": \"radius\"\n    }\n  ]\n}',
-        '根据分析结果，可以看出用户数量的变化情况。在1号有20个用户，2号有40个用户，3号有600个用户。据此可以得出结论：用户数量在3号有明显的增长，相比1号和2号，增长速度更快。',
-        'succeed', NULL, 1690946228361175042, '2023-08-19 19:40:39', '2023-08-19 19:40:39', 0);
+INSERT INTO `chart` VALUES (1690652196070334465, 'nanchengyu网站数据分析', 'nanchengyu', '日期,用户数量\n1,20\n2,40\n3,600\n', '玫瑰图', '{\n  \"tooltip\": {},\n  \"series\": [\n    {\n      \"name\": \"用户数量\",\n      \"type\": \"pie\",\n      \"data\": [\n        {\"value\": 20, \"name\": \"1\"},\n        {\"value\": 40, \"name\": \"2\"},\n        {\"value\": 600, \"name\": \"3\"}\n      ],\n      \"roseType\": \"radius\",\n      \"label\": {\n        \"show\": true,\n        \"position\": \"inside\"\n      },\n      \"emphasis\": {\n        \"itemStyle\": {\n          \"shadowBlur\": 10,\n          \"shadowOffsetX\": 0,\n          \"shadowColor\": \"rgba(0, 0, 0, 0.5)\"\n        }\n      }\n    }\n  ]\n}', '根据数据分析结果，可以看出nanchengyu网站的用户数量在第3天出现了显著增长，从40增加到了600。这表明在第3天有大量用户访问了该网站。前两天的用户数量相对较少，说明该网站的用户活跃度在第3天有了明显提升。', 'succeed', NULL, 1690592362125934594, '2023-08-13 17:11:09', '2024-03-30 00:09:50', 0);
+INSERT INTO `chart` VALUES (1690750045223219202, '南城网站用户增长趋势图', '南城网站用户增长趋势图', '日期,用户数量\n1,20\n2,40\n3,600\n', '玫瑰图', '{\n  \"tooltip\": {},\n  \"grid\": {},\n  \"polar\": {},\n  \"angleAxis\": {\n    \"type\": \"category\",\n    \"data\": [\"1\", \"2\", \"3\"]\n  },\n  \"radiusAxis\": {},\n  \"series\": [\n    {\n      \"type\": \"bar\",\n      \"data\": [20, 40, 600],\n      \"coordinateSystem\": \"polar\",\n      \"barCategoryGap\": \"1\",\n      \"label\": {\n        \"show\": true,\n        \"position\": \"top\",\n        \"formatter\": \"{b}\\n{c}\"\n      }\n    }\n  ]\n}', '根据数据分析，南城网站用户数量呈现出明显的增长趋势。在第1天，用户数量为20；第2天，用户数量增加至40；第3天，用户数量激增至600。从数据中可以观察到，用户数量的增长速度非常快。根据这个趋势，可以得出结论：南城网站的用户增长非常迅速。', 'succeed', NULL, 1690592362125934594, '2023-08-13 23:39:58', '2024-03-25 01:42:10', 0);
+INSERT INTO `chart` VALUES (1691017451925446658, '龙哥网站数据人数分析', '龙哥网站数据分析图', '日期,用户数量\n1,20\n2,40\n3,600\n', '雷达图', '{\n  \"title\": {\n    \"text\": \"龙哥网站数据人数分析\",\n    \"subtext\": \"用户数量\"\n  },\n  \"tooltip\": {\n    \"trigger\": \"axis\"\n  },\n  \"radar\": {\n    \"indicator\": [\n      {\n        \"name\": \"1\",\n        \"max\": 600\n      },\n      {\n        \"name\": \"2\",\n        \"max\": 600\n      },\n      {\n        \"name\": \"3\",\n        \"max\": 600\n      }\n    ]\n  },\n  \"series\": [\n    {\n      \"name\": \"用户数量\",\n      \"type\": \"radar\",\n      \"data\": [\n        {\n          \"value\": [20, 40, 600],\n          \"name\": \"用户数量\"\n        }\n      ]\n    }\n  ]\n}', '根据数据分析，龙哥网站在不同日期的用户数量呈现较大的差异。具体来说，第一天的用户数量为20人，第二天的用户数量为40人，而第三天的用户数量达到了600人。通过雷达图的可视化形式，可以直观地展示出每天的用户数量情况。从图中可以明显看出，第三天的用户数量远超过前两天，说明在第三天有一次较大规模的用户增长。这可能是由于某种推广活动或者宣传效果好所导致的。需进一步分析原因，以便针对性地进行后续的运营策略和推广活动。总体而言，龙哥网站的用户数量呈现出良好的增长态势，但仍需要不断努力提升。', 'succeed', NULL, 1690946228361175042, '2023-08-14 17:22:32', '2023-08-14 17:22:32', 0);
+INSERT INTO `chart` VALUES (1691359037385428994, '我想要获取下我的网站用户增长趋势', 'TechMindWave网站用户增长趋势图', '日期,用户数量\n1,20\n2,40\n3,600\n', '雷达图', '{\n  \"title\": {\n    \"text\": \"网站用户增长趋势\",\n    \"subtext\": \"数据来源：原始数据\"\n  },\n  \"tooltip\": {},\n  \"radar\": {\n    \"name\": {\n      \"textStyle\": {\n        \"color\": \"#fff\",\n        \"backgroundColor\": \"#999\",\n        \"borderColor\": \"#000\",\n        \"borderWidth\": 1,\n        \"borderRadius\": 3,\n        \"padding\": [3, 5]\n      }\n    },\n    \"indicator\": [\n      { \"name\": \"1\", \"max\": 600 },\n      { \"name\": \"2\", \"max\": 600 },\n      { \"name\": \"3\", \"max\": 600 }\n    ]\n  },\n  \"series\": [{\n    \"type\": \"radar\",\n    \"data\": [\n      {\n        \"name\": \"用户数量\",\n        \"value\": [20, 40, 600]\n      }\n    ]\n  }]\n}', '根据提供的原始数据，通过雷达图可以看出，在1号有20个用户，2号有40个用户，3号急剧增长到600个用户。', 'succeed', NULL, 1690946228361175042, '2023-08-15 15:59:53', '2023-08-15 15:59:53', 0);
+INSERT INTO `chart` VALUES (1692864147542282241, '你好网用户', '你好网用户', '日期,用户数量\n1,20\n2,40\n3,600\n', '玫瑰图', '{\n  \"title\": {\n    \"text\": \"用户数量玫瑰图\"\n  },\n  \"legend\": {},\n  \"series\": [\n    {\n      \"name\": \"用户数量\",\n      \"type\": \"pie\",\n      \"data\": [\n        { \"value\": 20, \"name\": \"1\" },\n        { \"value\": 40, \"name\": \"2\" },\n        { \"value\": 600, \"name\": \"3\" }\n      ],\n      \"roseType\": \"radius\"\n    }\n  ]\n}', '根据分析结果，可以看出用户数量的变化情况。在1号有20个用户，2号有40个用户，3号有600个用户。据此可以得出结论：用户数量在3号有明显的增长，相比1号和2号，增长速度更快。', 'succeed', NULL, 1690946228361175042, '2023-08-19 19:40:39', '2023-08-19 19:40:39', 0);
+INSERT INTO `chart` VALUES (1692864147542282242, '销量分析', '销量分析', '日期，销售额(元)，成本(元)，利润(元)2023/5/1，120,000，80,000，40,0002023/5/2，98,000，65,000,33.0002023/5/3，78,000,52.000.26.0002023/5/4，92.000,58.00034.0002023/5/5，105,000，70,000，35.00\n2023/5/6,88,000,60,000，28,0002023/5/7,36,00104.000，68.0002023/5/8,123,000,82,000,41,002023/5/9，97,000，64,000，33,0002023/5/10，116,000，75,000，41.0002023/5/11，98.000，65.000.33,0002023/5/12,82,000，55,000，27,0002023/5/13,103,000，70.000，，33,00(2023/5/14,92,000，60,000,，32.0002023/5/15,118,000,78,000,40.000，39.0002023/5/16，107.000，68.000,，96,000，63.000,2023/5/17.33.0002023/5/18，110,000，75,000,，35,0002023/5/19,31,00089,000，58,000，2023/5/20，104,000，66,000，38,002023/5/21，119,000，80,000,，39.0002023/5/22，93,000，59,000,，34,0002023/5/23,101,000,65,000,36,0002023/5/24，85,000，56,000，29,000\n2023/5/25,112,000,73,000, 39,0002023/5/26，99,000，63,000， 36,0002023/5/27,107,000，69,000，38,000', '柱形图', '{\"tooltip\":{\"trigger\":\"axis\"},\"legend\":{\"data\":[\"销售额\",\"成本\",\"利润\"]},\"xAxis\":{\"data\":[\"2023/5/1\",\"2023/5/2\",\"2023/5/3\",\"2023/5/4\",\"2023/5/5\",\"2023/5/6\",\"2023/5/7\",\"2023/5/8\",\"2023/5/9\",\"2023/5/10\",\"2023/5/11\",\"2023/5/12\",\"2023/5/13\",\"2023/5/14\",\"2023/5/15\",\"2023/5/16\",\"2023/5/17\",\"2023/5/18\",\"2023/5/19\",\"2023/5/20\",\"2023/5/21\",\"2023/5/22\",\"2023/5/23\",\"2023/5/24\",\"2023/5/25\",\"2023/5/26\",\"2023/5/27\"]},\"yAxis\":{},\"series\":[{\"name\":\"销售额\",\"type\":\"bar\",\"data\":[120000,98000,78000,92000,105000,88000,104000,123000,97000,116000,98000,82000,103000,92000,118000,107000,96000,110000,89000,104000,119000,93000,101000,85000,112000,99000,107000]},{\"name\":\"成本\",\"type\":\"bar\",\"data\":[80000,65000,52000,58000,70000,60000,68000,82000,64000,75000,65000,55000,70000,60000,78000,68000,63000,75000,58000,66000,80000,59000,65000,56000,73000,63000,69000]},{\"name\":\"利润\",\"type\":\"bar\",\"data\":[40000,33000,26000,34000,35000,28000,36000,41000,33000,41000,33000,27000,33000,32000,40000,39000,33000,35000,31000,38000,39000,34000,36000,29000,39000,36000,38000]}],\"toolbox\":{\"show\":true,\"feature\":{\"saveAsImage\":{\"show\":true,\"excludeComponents\":\"[\'toolbox\']\",\"pixelRatio\":2}}}}', '根据提供的数据，我们可以得出以下结论:\n1.在给定的日期范围内，网站的总销售额为1,599,611元，总成本为1,149,433元，总利润为450,178元\n2.每天的利润波动较大，最高利润出现在2023年5月1日和2023年5月21日，均为40,000元;最低利润出现在2023年5月19日，为31,000元\n3.从数据中可以看出，销售额和成本之间存在一定的正相关关系，即销售额较高的日子，成本也相对较高\n4.在给定的日期范围内，销售额、成本和利润的平均值分别为:销售额平均值为114,663元，成本平均值为82,811元，利润平均值为32,169元。\n5.根据这些数据，我们可以进一步分析网站的盈利能力、成本控制以及销售趋势等方面的信息，以制定更有效的营销策略和成本管理措施。', 'succeed', NULL, 1690946228361175042, '2024-03-25 01:53:09', '2024-03-25 01:54:02', 0);
+INSERT INTO `chart` VALUES (1772096035459739650, '分析下这个班每个学生每个科目的成绩，60分为及格分数', '学生成绩表', '姓名,形式政策,英语1,英语2,英语3,英语4,高数1,高数1,MySQL数据库\n王小君,99,99,99,99,89,99,88,77\n朱大彪,95,98,59,99,98,59,98,59\n南小城,99,97,99,59,97,99,97,99\n南小余,99,99,69,99,99,88,99,69\n余生,80,59,99,89,59,99,59,99\n南生,79,99,88,78,99,88,99,88\n南城,69,29,99,99,29,99,29,99\n闫征,99,69,79,100,69,79,69,79\n', '柱状图', '{\n    \"title\": {\n        \"text\": \"学生各科成绩分析\",\n        \"left\": \"center\"\n    },\n    \"tooltip\": {\n        \"trigger\": \"axis\",\n        \"axisPointer\": {\n            \"type\": \"shadow\"\n        }\n    },\n    \"legend\": {\n        \"data\": [\"形式政策\", \"英语1\", \"英语2\", \"英语3\", \"英语4\", \"高数1\", \"高数2\", \"MySQL数据库\"]\n    },\n    \"grid\": {\n        \"left\": \"3%\",\n        \"right\": \"4%\",\n        \"bottom\": \"3%\",\n        \"containLabel\": true\n    },\n    \"xAxis\": {\n        \"type\": \"category\",\n        \"boundaryGap\": false,\n        \"data\": [\"王小君\", \"朱大彪\", \"南小城\", \"南小余\", \"余生\", \"南生\", \"南城\", \"闫征\"]\n    },\n    \"yAxis\": {\n        \"type\": \"value\"\n    },\n    \"series\": [\n        {\n            \"name\": \"形式政策\",\n            \"type\": \"bar\",\n            \"data\": [99, 95, 99, 99, 80, 79, 69, 99]\n        },\n        {\n            \"name\": \"英语1\",\n            \"type\": \"bar\",\n            \"data\": [99, 98, 97, 99, 59, 99, 29, 69]\n        },\n        {\n            \"name\": \"英语2\",\n            \"type\": \"bar\",\n            \"data\": [99, 59, 99, 99, 89, 78, 99, 79]\n        },\n        {\n            \"name\": \"英语3\",\n            \"type\": \"bar\",\n            \"data\": [99, 99, 59, 69, 99, 99, 99, 100]\n        },\n        {\n            \"name\": \"英语4\",\n            \"type\": \"bar\",\n            \"data\": [89, 99, 99, 99, 59, 99, 99, 69]\n        },\n        {\n            \"name\": \"高数1\",\n            \"type\": \"bar\",\n            \"data\": [99, 98, 97, 99, 99, 88, 99, 79]\n        },\n        {\n            \"name\": \"高数2\",\n            \"type\": \"bar\",\n            \"data\": [88, 59, 99, 88, 59, 88, 29, 79]\n        },\n        {\n            \"name\": \"MySQL数据库\",\n            \"type\": \"bar\",\n            \"data\": [77, 98, 97, 99, 99, 99, 29, 79]\n        }\n    ]\n}', '分析结论\n从数据中可以看出，大部分学生在形式政策、英语1和高数1等科目上表现较好，得分较高。然而，有些学生在某些科目上的成绩并不理想，例如朱大彪在英语2上只有59分，南城在英语1上只有29分，这可能意味着他们在这些科目上存在一些学习困难。另外，虽然大部分学生在大部分科目上的成绩都超过了60分的及格线，但是也有部分学生的部分科目成绩低于60分，例如余生在英语1上只有59分，南城在英语1上只有29分，这需要引起他们的注意，并采取一些措施来提高他们的成绩。', 'succeed', NULL, 1690946228361175042, '2024-03-25 02:59:54', '2024-03-25 03:01:04', 0);
+
 
 -- ----------------------------
--- Table structure for credit
+-- Table structure for essay
 -- ----------------------------
-DROP TABLE IF EXISTS `credit`;
-CREATE TABLE `credit`
-(
-    `id`          bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
-    `userId`      bigint(20) NULL     DEFAULT NULL COMMENT '创建用户Id',
-    `creditTotal` bigint(20) NULL     DEFAULT 0 COMMENT '总积分',
-    `createTime`  datetime   NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-    `updateTime`  datetime   NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
-    `isDelete`    tinyint(4) NOT NULL DEFAULT 0 COMMENT '是否删除',
-    PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB
-  AUTO_INCREMENT = 4
-  CHARACTER SET = utf8mb4
-  COLLATE = utf8mb4_unicode_ci COMMENT = '积分表'
-  ROW_FORMAT = Dynamic;
+DROP TABLE IF EXISTS `essay`;
+CREATE TABLE `essay`  (
+                          `id` bigint NOT NULL AUTO_INCREMENT COMMENT 'id',
+                          `essayName` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL COMMENT '文章名称',
+                          `essayType` varchar(256) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL COMMENT '文章类型',
+                          `genEssay` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL COMMENT '生成的文章内容',
+                          `userId` bigint NULL DEFAULT NULL COMMENT '创建文章用户 id',
+                          `createTime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+                          `updateTime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+                          `isDelete` tinyint NOT NULL DEFAULT 0 COMMENT '是否删除',
+                          PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 1775881069127823363 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '文章信息表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
--- Records of credit
+-- Records of essay
 -- ----------------------------
-INSERT INTO `credit`
-VALUES (1, 1690592362125934594, 9997, '2023-08-13 23:21:28', '2023-08-14 09:51:15', 0);
-INSERT INTO `credit`
-VALUES (2, 1690741578617942018, 99998, '2023-08-13 23:21:55', '2023-08-13 23:32:18', 0);
-INSERT INTO `credit`
-VALUES (3, 1690946228361175042, 10196, '2023-08-14 12:42:38', '2023-08-19 19:43:38', 0);
+INSERT INTO `essay` VALUES (1731623236617977858, '20岁的青春', '散文', '20岁的青春\n散文\n在生命的长河中，20岁如一首轻快的乐章，旋律跌宕起伏，充满了激情与梦想。它是青春的代名词，一个关于成长、探索和自我发现的时期。在这个年纪，我们像是站在人生的十字路口，既兴奋又迷茫，既有无限的可能，也面临着选择的困难。\n\n20岁的我们，正值青春年华，生命中最为灿烂的时光。这个年龄的我们，心中有着太多的梦想和渴望，希望能够抓住每一个机会，让自己的生活变得更加精彩。我们渴望爱情，追求友情，对未来充满了无限的憧憬。我们勇敢地尝试，即使面对失败，也能够笑对人生，因为我们知道，这一切都是成长的代价。\n\n在20岁的青春里，我们开始更加深刻地认识自己。我们开始思考自己的未来，什么是真正对我们重要的，我们想要的生活是什么样子。这个过程可能会让我们感到困惑，甚至是痛苦，但这也是自我成长的必经之路。通过不断的探索和尝试，我们慢慢地找到了自己的方向，明白了自己的价值和意义。\n\n20岁的青春，是一段充满挑战的旅程。我们可能会遇到挫折，经历失败，但这些都是我们宝贵的财富。它们教会我们坚强，教会我们如何面对困难，如何在逆境中成长。每一次的失败都是一次新的开始，每一次的挑战都让我们变得更加强大。\n\n在这个美妙的年纪，让我们勇敢地追求自己的梦想，无畏地面对生活中的每一个挑战。让我们珍惜20岁的青春，用我们的热情和努力，书写属于自己的精彩篇章。因为，这一切都将成为我们人生中最宝贵的回忆，一段永远值得我们怀念的时光。\n\n让20岁的青春成为我们生命中最亮丽的风景，无论未来如何，这段岁月都将是我们心中最温暖的港湾。在这个充满希望和梦想的年纪，让我们拥抱青春，拥抱生活，勇敢地向前走，迎接属于我们自己的灿烂未来。', 1690946228361175042, '2024-03-25 02:25:15', '2024-03-25 02:25:54', 0);
+INSERT INTO `essay` VALUES (1773589153614979073, '家乡', '散文', '标题：家乡的变迁\n\n文章类型：散文\n\n家乡，这个字眼总是能唤起我心中最深沉的情感。它不仅仅是一个地理概念，更是一段历史，一份情感，一种文化。每当我闭上眼睛，思绪就会飘向那片熟悉的土地，那里有我童年的欢笑，青春的梦想，还有那些无法割舍的亲情和记忆。\n\n然而，随着时间的推移，家乡也在悄然发生着变化。这些变化，有时让我感到欣慰，有时又让我感到忧心。在这篇散文中，我想记录下我所见证的家乡的变迁，以及这些变迁给我带来的思考和感悟。\n\n记得小时候，家乡是一片宁静的田园风光。春天，油菜花金黄灿烂，秋天，稻谷泛起金色的波浪。那时的村庄，房屋稀疏，炊烟袅袅，邻里之间亲如一家。孩子们在田野间追逐嬉戏，老人们在树荫下悠闲地聊天。那时的家乡，虽然物质不丰富，但人们的生活却是充实而满足的。\n\n随着时代的发展，家乡也迎来了现代化的步伐。新的道路被修建，新的楼房拔地而起，村里的年轻人纷纷外出打工，带回了新鲜的观念和生活方式。家乡的面貌开始发生改变，曾经的田野被工厂和商业区所取代，乡村的宁静被喧嚣的车流和人潮所打破。\n\n这些变化，无疑给家乡带来了繁荣。人们的生活水平提高了，物质条件改善了，村里的孩子们有了更好的教育机会，老人们也能享受到更便捷的医疗服务。然而，在这些积极的变化背后，我也看到了一些令人忧心的现象。\n\n随着工业化的进程，家乡的环境开始遭受破坏。河水不再清澈，空气中弥漫着刺鼻的气味，田野里的鸟儿和昆虫渐渐稀少。乡亲们为了生计忙碌奔波，人与人之间的交流变得越来越少，那份曾经的亲密和温暖似乎正在慢慢消失。\n\n面对家乡的变迁，我感到了深深的矛盾。一方面，我为家乡的发展和进步感到骄傲；另一方面，我也为失去的美好感到惋惜。我开始思考，如何在发展与保护之间找到平衡点，如何让家乡既能享受现代化的成果，又能保持那份质朴和宁静。\n\n或许，我们可以尝试回归传统，重建那些被遗忘的文化和习俗。我们可以在节假日举办庙会，让孩子们了解祖辈的智慧；我们可以在村中开辟绿地，让村民们有一个亲近自然的地方；我们还可以在教育中强调环保意识，让下一代意识到保护家乡的重要性。\n\n家乡的变迁，是时代的必然。我们不能阻止变化的发生，但我们可以选择如何应对。我希望，在未来的日子里，家乡能够在保持传统的同时，拥抱现代，成为一个既有活力又有温度的地方。\n\n家乡，无论它怎样变迁，始终是我心灵的归宿。我愿意用我的笔，记录下它的每一次变化，用我的心，感受它的每一份脉动。即使有一天，我远离了这片土地，家乡的记忆，也将永远镌刻在我的生命里。', 1690946228361175042, '2024-03-29 13:53:00', '2024-03-29 13:53:00', 0);
+INSERT INTO `essay` VALUES (1773590986509041666, '春秋时期，齐国的公子纠与公子小白争夺君位，管仲和鲍叔分别辅佐他们。管仲带兵阻击小白，用箭射中他的衣带钩，小白装死逃脱。后来小白即位为君，史称齐桓公。鲍叔对桓公说，要想成就霸王之业，非管仲不可。于是桓公重用管仲，鲍叔甘居其下，终成一代霸业。后人称颂齐桓公九合诸侯、一匡天下，为“春秋五霸”之首。孔子说：“桓公九合诸侯，不以兵车，管仲之力也。”司马迁说：“天下不多（称赞）管仲之贤而多鲍叔能知人也。”\n\n班级计划举行读书会，围绕上述材料展开讨论。齐桓公、管仲和鲍叔三人，你对哪个感触最深？请结合你的感受和思考写一篇发言稿。\n\n要求：结合材料，选好角度，确定立意，明确文体，自拟标题；不要套作，不得抄袭；不得泄露个人信息；不少于800字。', '记叙文', '标题：智慧与忠诚——管仲的抉择\n\n在春秋时期的齐国，一段关于权力、智慧和忠诚的故事被历史铭记。公子纠与公子小白的君位之争，不仅是一场权力的角逐，更是人性光辉的映照。在这历史的长河中，管仲和鲍叔的形象尤为鲜明，他们的故事激励着一代又一代的人。\n\n管仲，一个充满智慧与胆识的人物，他的一生充满了传奇色彩。在公子纠与公子小白争夺君位的过程中，管仲忠心辅佐公子纠，甚至带兵阻击小白，用箭射中他的衣带钩，展现了他的英勇与果敢。然而，命运的转折总是出人意料，小白最终即位为君，史称齐桓公。在这个关键时刻，管仲的命运似乎陷入了绝境。\n\n然而，历史的转折点往往也是人性光辉的体现。鲍叔，作为公子小白的辅佐者，他深知管仲的才能，向齐桓公推荐重用管仲。齐桓公的智慧在于能够超越个人恩怨，重用昔日的敌人，而管仲的智慧则在于能够在逆境中重新站起，接受齐桓公的重用。这种胸怀与智慧的结合，最终成就了一代霸业。\n\n孔子曾说：“桓公九合诸侯，不以兵车，管仲之力也。”这句话道出了管仲对齐桓公霸业的重要贡献。而司马迁的评价则更深刻：“天下不多（称赞）管仲之贤而多鲍叔能知人也。”这不仅是对管仲才能的肯定，也是对鲍叔慧眼识才的赞赏。\n\n在这个故事中，我对管仲的感触最深。管仲的人生充满了起伏，他能够在失败的边缘重新找到自己的位置，这需要极大的勇气和智慧。他的选择，不仅仅是为了个人的前途，更是为了国家的兴盛。他的忠诚不是盲目的，而是建立在对国家和民族未来的深思熟虑之上。\n\n管仲的故事告诉我们，人生的道路不会一帆风顺，但只要我们有智慧去面对困境，有勇气去接受挑战，就有可能创造出不一样的辉煌。他的智慧在于能够把握时代的脉搏，他的忠诚在于对国家和民族的深切情感。\n\n在班级的读书会上，我想分享的不仅仅是管仲的故事，更是他那种在逆境中不断自我超越的精神。在我们的学习和生活中，我们也许会遇到各种困难和挑战，但只要我们能够像管仲一样，保持智慧和忠诚，我们就能找到属于自己的道路，成就自己的梦想。\n\n最后，我想引用一句话来结束我的发言：“在历史的长河中，每个人都是一颗星辰，有的璀璨夺目，有的默默无闻。但只要我们坚持自己的信念，用智慧和勇气去点亮自己的人生，我们的星辰终将闪耀。”谢谢大家。', 1690946228361175042, '2024-03-29 14:00:17', '2024-03-29 14:00:17', 0);
+INSERT INTO `essay` VALUES (1773594552380477442, '中国共产党走过百年历程。在党团结带领人民进行的伟大斗争中孕育的革命文化和社会主义先进文化，已经深深融入我们的血脉和灵魂。我们过的节日如“五四”“七一”“八一”“十一”，我们唱的歌曲如《义勇军进行曲》《没有共产党就没有新中国》，我们读的作品如《为人民服务》《沁园春·雪》《荷花淀》《红岩》，我们景仰的革命烈士如李大钊、夏明翰、方志敏、杨靖宇，我们学习的榜样如雷锋、焦裕禄、钱学森、黄大年，等等，都给予我们精神的滋养和激励。我们心中有阳光，我们脚下有力量。我们的未来将融汇于中华民族伟大复兴的新征程，我们处在一个大有可为的时代……\n\n请结合材料，以“可为与有为”为主题，写一篇文章。\n\n要求：选准角度，确定立意，明确文体，自拟标题；不要套作，不得抄袭；不得泄露个人信息；不少于800字。', '议论文', '标题：可为与有为——中国共产党引领下的中华民族伟大复兴之路\n\n内容：\n\n在中国共产党的百年历程中，我们见证了一个伟大民族的觉醒与崛起。从“五四”运动的青年激情到“七一”建党的坚定信念，从“八一”南昌起义的英勇斗争到“十一”国庆的盛大庆典，每一个节日都是对革命文化和社会主义先进文化的深刻记忆。这些文化元素，如同《义勇军进行曲》中的激昂旋律，如同《没有共产党就没有新中国》中的铿锵誓言，已经深深融入我们的血脉和灵魂。\n\n我们读的《为人民服务》、《沁园春·雪》、《荷花淀》、《红岩》，不仅是文学作品，更是精神的传承。我们景仰的革命烈士李大钊、夏明翰、方志敏、杨靖宇，以及我们学习的榜样雷锋、焦裕禄、钱学森、黄大年，他们的故事和精神，给予我们无穷的力量和激励。\n\n在这样一个大有可为的时代，我们心中有阳光，脚下有力量。我们的未来，将融汇于中华民族伟大复兴的新征程。这是一个需要我们有所作为的时代，也是一个我们能够有所作为的时代。\n\n“可为与有为”，不仅仅是一个主题，更是一种责任和担当。在中国共产党的领导下，我们有理由相信，每一个人都能在自己的岗位上发光发热，为实现中华民族的伟大复兴贡献自己的力量。无论是科技创新的钱学森，还是基层建设的焦裕禄，他们都用自己的实际行动诠释了“可为与有为”的真谛。\n\n我们要从历史中汲取智慧，从先辈们的精神中寻找力量。我们要明白，每一个时代都有其独特的使命和挑战，而我们这一代人的使命，就是继续推进中华民族的伟大复兴，让中国在世界舞台上展现出更加璀璨的光芒。\n\n在这个过程中，我们需要坚持和发展中国特色社会主义，不断深化改革，扩大开放，推动经济社会持续健康发展。我们需要坚持以人民为中心的发展思想，不断提高人民生活水平，实现全体人民共同富裕。我们需要坚持走和平发展道路，积极参与全球治理，为构建人类命运共同体作出新的更大贡献。\n\n“可为与有为”是对每一个人的期待，也是对每一个人的挑战。在这个伟大的时代，让我们以中国共产党的百年历程为鉴，以革命文化和社会主义先进文化为指引，不忘初心，牢记使命，为实现中华民族的伟大复兴而不懈奋斗。\n\n在未来的道路上，让我们携手前行，以青春之我创造青春之中国，以智慧之我开启智慧之时代，以力量之我筑就力量之民族。在中国共产党的领导下，我们有信心，有能力，让中华民族的明天更加美好，让世界因中国而更加精彩。', 1690946228361175042, '2024-03-29 14:14:27', '2024-03-29 14:14:27', 0);
+INSERT INTO `essay` VALUES (1773596321424658433, '《红楼梦》写到“大观园试才题对额”时有一个情节，为元妃（贾元春）省亲修建的大观园竣工后，众人给园中桥上亭子的匾额题名。有人主张从欧阳修《醉翁亭记》“有亭翼然”一句中，取“翼然”二字；贾政认为“此亭压水而成”，题名“还须偏于水”，主张从“泻出于两峰之间”中拈出一个“泻”字，有人即附和题为“泻玉”；贾宝玉则觉得用“沁芳”更为新雅，贾政点头默许。“沁芳”二字，点出了花木映水的佳境，不落俗套；也契合元妃省亲之事，蕴藉含蓄，思虑周全。\n\n以上材料中，众人给匾额题名，或直接移用，或借鉴化用，或根据情境独创，产生了不同的艺术效果。这个现象也能在更广泛的领域给人以启示，引发深入思考。请你结合自己的学习和生活经验，写一篇文章。\n\n要求：选准角度，确定立意，明确文体，自拟标题；不要套作，不得抄袭；不得泄露个人信息；不少于800字。', '记叙文', '标题：沁芳思韵——从《红楼梦》的亭名谈创造性思维\n\n在古典名著《红楼梦》中，大观园试才题对额的情节，不仅是一场文化的盛宴，更是一次智慧与才情的较量。贾元春省亲之际，大观园新建成的桥上亭子需要题名，这一细节描写，不仅展现了不同人物的性格特点，也映射出人们在面对选择时的不同思维方式。\n\n贾政的实用主义思维，主张“还须偏于水”，从“泻出于两峰之间”中取“泻”字，题为“泻玉”，体现了他对亭子地理位置的直观感受和对水流形态的偏好。而贾宝玉的“沁芳”则更显诗意，不仅描绘了花木映水的美景，也寓意着元妃的到来如同芬芳之气，悄然沁入每个人的心田。这两种不同的题名方式，一种是直接移用，一种是借鉴化用，还有一种是根据情境独创，它们各自产生了独特的艺术效果。\n\n在我的学习和生活中，这样的现象也时常出现。在学校的作文课上，老师鼓励我们要学会创新，不要总是套用那些老生常谈的素材。记得有一次写作文，题目是关于“希望”的议论文。班上大多数同学都选择了常规的素材，比如希望工程、植物向阳生长等，而我则想起了小时候在老家后院种下的一棵小树苗。那棵树苗经历了风雨的洗礼，终于长成了参天大树，成为了我家乡的一道风景。我用这个小故事作为引子，展开了对希望的论述，最终得到了老师的高度评价。\n\n这个小小的经历让我深刻体会到，无论是文学创作还是日常生活中的点滴，创新都是不可或缺的。它能够让我们从固有的模式中跳脱出来，看到不一样的世界，感受到不同的美。正如贾宝玉的“沁芳”，不落俗套，给人以新鲜感，也更能触动人心。\n\n当然，创新并不意味着完全摒弃传统。在《红楼梦》中，贾政和其他人的选择虽然不如贾宝玉的“沁芳”那样新颖，但他们的思考过程也是基于对传统文化的理解和尊重。在我们的实际生活中，很多时候也需要在继承和发扬传统的基础上进行创新。这样，我们的创新才能更加深厚，更有根基。\n\n总之，《红楼梦》中的这一情节，不仅是对人物性格的刻画，更是对人们思维方式的一种启示。在我们的学习和生活中，我们应当学会像贾宝玉那样，善于观察、敢于创新，同时也要像贾政那样，尊重传统、脚踏实地。只有这样，我们才能在生活的每一个角落，都能发现并创造出属于自己的“沁芳”。', 1690946228361175042, '2024-03-29 14:21:29', '2024-03-29 14:21:29', 0);
+INSERT INTO `essay` VALUES (1773743194454134786, '双奥之城，闪耀世界。两次奥运会，都显示了中国体育发展的新高度，展示了中国综合国力的跨越式发展，也见证了你从懵懂儿童向有为青年的跨越。亲历其中，你能感受到体育的荣耀和国家的强盛；未来前行，你将融入民族复兴的澎湃春潮。卓越永无止境，跨越永不停歇。\n\n请结合以上材料，以“跨越，再跨越”为主题写一篇文章，体现你的感受与思考。\n\n要求：选准角度，确定立意，明确文体，自拟标题；不要套作，不得抄袭；不得泄露个人信息；不少于800字。', '记叙文', '标题：跨越，再跨越——双奥之城见证我成长的脚步\n\n在我心中，有一座城市以它独特的光辉闪耀着世界——北京，这座双奥之城。它不仅两次承办了奥运会，更是见证了我从懵懂儿童成长为有为青年的舞台。每当回想起那些年亲历的体育盛事，我的内心便充满了自豪与激动。而当我展望未来，我知道，自己将融入民族复兴的澎湃春潮中，与国家一同卓越永无止境，跨越永不停歇。\n\n记得那是一个夏日的傍晚，电视机前传来了奥运会的主题曲，我和父母一起目睹了北京奥运会的开幕式。那一刻，五彩斑斓的烟火映照在我幼小的脸庞上，我的心被深深震撼了。那是我第一次感受到体育的魅力，也是我第一次意识到，我们的国家正以崭新的面貌展现在世界面前。\n\n岁月如梭，转眼间又一个奥运周期。这一次，我不再是那个需要父母陪伴的孩子，而是作为一名志愿者，亲身参与到冬奥会的志愿服务中。从赛场的秩序维护到外国友人的语言翻译，每一项工作都让我深刻体会到了作为一名中国人的骄傲和责任。我看到了来自世界各地的运动员在这里拼搏，看到了不同文化的交流与碰撞，更看到了中国综合国力的跨越式发展。\n\n这两次奥运会，不仅仅是体育赛事的举办，它们更是中国发展历程中的两个重要节点。从一个渴望了解世界的孩童，到一个在世界舞台上有所作为的青年，我的成长轨迹与国家的崛起不谋而合。我感受到了体育的荣耀，也见证了国家的强盛。这些经历，如同一笔笔浓墨重彩地绘制在我的人生画卷上，成为我最宝贵的财富。\n\n未来的道路上，我将继续前行。我知道，每一次的跨越都不是终点，而是新的起点。我将以更加成熟的姿态，融入到这个伟大时代的洪流中，为实现中华民族的伟大复兴贡献自己的力量。无论是个人的成长还是国家的发展，都需要不断地超越自我，不断地跨越新的高峰。\n\n在这座双奥之城的见证下，我坚信，只要我们不忘初心，砥砺前行，中国的明天必将更加辉煌。而我，也将在这片热土上，书写属于自己的传奇，实现一次又一次的跨越，再跨越。\n\n这就是我的故事，一个普通青年在双奥之城的见证下成长的故事。它不仅仅是关于体育的记忆，更是关于梦想与责任、荣耀与挑战的故事。在这个故事中，我学会了坚持与努力，也学会了如何成为一个对社会有用的人。我相信，在未来的日子里，我会继续跨越，再跨越，与国家一起，迎接更加灿烂的明天。', 1690946228361175042, '2024-03-30 00:05:06', '2024-03-30 00:05:06', 0);
+INSERT INTO `essay` VALUES (1775549291028570114, '阅读下面的材料，根据要求写作。\n\n“民生在勤，勤则不匮”，劳动是财富的源泉，也是幸福的源泉。“夙兴夜寐，洒扫庭内”，热爱劳动是中华民族的优秀传统，绵延至今。可是现实生活中，也有一些同学不理解劳动，不愿意劳动。有的说：“我们学习这么忙，劳动太占时间了！”有的说：“科技进步这么快，劳动的事，以后可以交给人工智能啊！”也有的说：“劳动这么苦，这么累，干吗非得自己干？花点钱让别人去做好了！”此外，我们身边也还有着一些不尊重劳动的现象。\n\n这引起了人们的深思。\n\n请结合材料内容，面向本校（统称“复兴中学”）同学写一篇演讲稿，倡议大家“热爱劳动，从我做起”，体现你的认识与思考，并提出希望与建议。要求：自拟标题，自选角度，确定立意；不要套作，不得抄袭；不得泄露个人信息；不少于800字。', '记叙文', '标题：热爱劳动，从我做起\n\n尊敬的复兴中学的同学们，\n\n你们好！我今天站在这里，想和大家分享一个我们中华民族的优秀传统——热爱劳动。这是我们的祖先留给我们的宝贵财富，也是我们走向未来的坚实基石。然而，我发现在我们的生活中，有些人对劳动的理解存在误区，甚至有些人不愿意劳动。我想说，每一个不理解劳动、不愿意劳动的想法，都是对我们优秀传统的否定，对我们未来的阻碍。\n\n首先，我想说的是，劳动并不是我们学习的负担，而是我们生活的必需。有人说：“我们学习这么忙，劳动太占时间了！”但是，我想问的是，我们真的没有时间去劳动吗？其实，我们每个人都有24小时，关键在于我们如何安排。如果我们把劳动看作是一种负担，那么我们就会觉得它占用了我们的时间；但如果我们把劳动看作是一种乐趣，那么我们就会觉得它丰富了我们的生活。劳动不仅可以让我们的生活更加丰富多彩，也可以让我们的身心更加健康。\n\n其次，我想说的是，科技的进步并不能取代我们的劳动。有人说：“科技进步这么快，劳动的事，以后可以交给人工智能啊！”但是，我想说的是，科技的进步是为了更好地服务于人类，而不是取代人类的劳动。我们应该利用科技的力量，更好地完成我们的劳动，而不是依赖科技，放弃我们的劳动。因为，只有通过劳动，我们才能真正体验到生活的乐趣，才能真正感受到成功的喜悦。\n\n最后，我想说的是，劳动并不是一种苦差事，而是一种乐趣。有人说：“劳动这么苦，这么累，干吗非得自己干？花点钱让别人去做好了！”但是，我想说的是，如果我们总是依赖别人，那么我们就永远无法体验到劳动的乐趣，永远无法感受到成功的喜悦。因为，只有通过自己的努力，我们才能真正体验到劳动的价值，才能真正感受到成功的喜悦。\n\n同学们，让我们一起热爱劳动，从我做起。让我们用我们的双手，创造我们的美好未来。让我们用我们的汗水，浇灌我们的梦想。让我们用我们的劳动，证明我们的价值。让我们一起，用劳动，书写我们的人生。\n\n谢谢大家！', 1690946228361175042, '2024-04-03 23:41:52', '2024-04-03 23:41:52', 0);
+INSERT INTO `essay` VALUES (1775787769591070721, '“民生在勤，勤则不匮”，劳动是财富的源泉，也是幸福的源泉。“夙兴夜寐，洒扫庭内”，热爱劳动是中华民族的优秀传统，绵延至今。可是现实生活中，也有一些同学不理解劳动，不愿意劳动。有的说：“我们学习这么忙，劳动太占时间了！”有的说：“科技进步这么快，劳动的事，以后可以交给人工智能啊！”也有的说：“劳动这么苦，这么累，干吗非得自己干？花点钱让别人去做好了！”此外，我们身边也还有着一些不尊重劳动的现象。\n\n这引起了人们的深思。\n\n请结合材料内容，面向本校（统称“复兴中学”）同学写一篇演讲稿，倡议大家“热爱劳动，从我做起”，体现你的认识与思考，并提出希望与建议。要求：自拟标题，自选角度，确定立意；不要套作，不得抄袭；不得泄露个人信息；不少于800字。', '记叙文', '标题：热爱劳动，从我做起\n\n尊敬的复兴中学的同学们：\n\n大家好！\n\n“民生在勤，勤则不匮”，劳动是财富的源泉，也是幸福的源泉。“夙兴夜寐，洒扫庭内”，热爱劳动是中华民族的优秀传统，绵延至今。可是现实生活中，也有一些同学不理解劳动，不愿意劳动。有的说：“我们学习这么忙，劳动太占时间了！”有的说：“科技进步这么快，劳动的事，以后可以交给人工智能啊！”也有的说：“劳动这么苦，这么累，干吗非得自己干？花点钱让别人去做好了！”此外，我们身边也还有着一些不尊重劳动的现象。\n\n这引起了人们的深思。\n\n今天，我想和大家谈谈关于热爱劳动的话题。在这个快节奏的时代，我们或许会认为劳动是一种负担，是一种浪费时间的行为。但是，我们不能忘记，正是无数劳动者辛勤付出，才创造了我们今天的幸福生活。正如那句古话所说：“民生在勤，勤则不匮。”劳动不仅仅是为了生存，更是为了实现自我价值，为了让我们的生活更加美好。\n\n首先，我们要认识到劳动的重要性。劳动不仅能够锻炼身体，增强体质，还能够培养我们的意志力和毅力。通过劳动，我们可以学会如何面对困难和挑战，如何与他人合作，如何克服自己的懒惰和依赖。这些品质对于我们的成长和未来的人生道路都至关重要。\n\n其次，我们要树立正确的劳动观念。不要把劳动看作是一种负担，而应该把劳动看作是一种乐趣。当我们用心去体验劳动的过程，我们会发现其中蕴含着无尽的快乐和满足。比如，当我们亲手种植一棵树，看着它茁壮成长，我们会感受到生命的奇迹；当我们帮助别人解决问题，看到他们满意的笑容，我们会感受到帮助他人的快乐。\n\n最后，我们要付诸行动，从自己做起，从现在做起。让我们从身边的小事做起，比如主动承担家务，帮助父母分担压力；在学校里，积极参与各种劳动活动，为班级和学校做出贡献。同时，我们还要尊重他人的劳动成果，不要随意浪费粮食和资源，要珍惜每一分来之不易的财富。\n\n亲爱的同学们，让我们一起行动起来，热爱劳动，从我做起。让我们用自己的双手创造美好的未来，让我们的生活充满阳光和希望。相信在我们共同的努力下，我们的校园、我们的家庭、我们的社会一定会变得更加美好！\n\n谢谢大家！', 1690946228361175042, '2024-04-04 15:29:32', '2024-04-04 15:29:32', 0);
+INSERT INTO `essay` VALUES (1775881069127823362, '2017全国Ⅰ卷继续采用有明确写作任务的新材料作文题型。作文材料源于央视5月份的一组连续报道，为了让考生的思考更集中、更深入，命题时做了必要的调整与提炼。\n\n\n命题在材料选用方面下足功夫，在写作要求的命制方面，反复斟酌试题的素材、内容和情境，直观而策略地反映时代主题，正面而巧妙地传递价值观念。立意高远却力避空泛，坚持以学生为本，接地气、有生气，时代感强。将“呈现你所认识的中国”作为明确指令，鼓励考生从所知所学所感出发，在对宏大话题的把握中，感性叙说，理性思辨，畅所欲言，“讲好中国故事”；引导考生用中国梦激扬青春梦，关心现实国情与改革发展，展示他们的理想信念、精神状态与综合素质。\n\n\n“呈现你所认识的中国”要求大处着眼，十二个“中国关键词”是考生落笔的抓手，而“从中选择两三个关键词”则完全尊重考生的个人意愿。这样处理既利于引发考生的写作欲望和真情实感，也利于将思想教育和价值引领作用细化、实化、具体化。这些关键词搭配组合的自由度很大。如由“长城”“京剧”讲讲拥有古老文明的传统中国，由“高铁”“移动支付”谈谈现代开放的高科技中国，由“中华美食”“广场舞”说说好玩的中国或热情的中国，由“共享单车”“移动支付”聊聊生机勃勃的时尚中国或新生事物层出不穷的互联网中国。另外，还可以将传统的国粹“京剧”与时下流行的“广场舞”并置而观，将文化悠久的“中华美食”与“食品安全”的严峻现实作勾连，也可以将古时的“长城”与当下的“一带一路”相互对照、相互发明……凡此种种，都可能写出上佳的文章。每一个关键词都是中国的缩影和表征，它们之间既存在着丰富的张力和层叠的思辨空间，又共同构成了多样而立体的中国。', '说明文', '文章标题：【新时代的印记】你所认识的中国\n\n文章内容：\n\n当我们谈论中国，你会想到什么？是古老的长城、京剧，还是现代的高铁、移动支付？是中华美食、广场舞，还是共享单车、互联网？这些元素，都是中国的缩影和表征，它们之间既存在着丰富的张力和层叠的思辨空间，又共同构成了多样而立体的中国。\n\n中国，一个拥有古老文明的国家，长城、京剧是我们的国粹，是我们的骄傲。长城，象征着中国的坚韧和不屈，每一块石头都充满了历史的痕迹；京剧，以其独特的艺术形式，展现了中国人民的智慧和才华。这些都是我们所认识的传统中国。\n\n然而，中国并不仅仅是一个拥有古老文明的国家。在科技的发展下，中国已经变成了一个现代开放的高科技国家。高铁、移动支付是我们的新名片，它们展示了中国的现代化和开放性。高铁，以其快速的速度和高效的服务，改变了我们的出行方式；移动支付，以其便捷的支付方式，改变了我们的生活方式。这些都是我们所认识的现代中国。\n\n中国，也是一个好玩的国家。中华美食、广场舞是我们的快乐源泉。中华美食，以其丰富多样的口味，满足了我们的味蕾；广场舞，以其欢快的节奏，活跃了我们的生活。这些都是我们所认识的好玩的中国。\n\n中国，更是一个生机勃勃的国家。共享单车、互联网是我们的新生事物。共享单车，以其绿色出行的理念，推动了我们的环保行动；互联网，以其无边界的信息传播，拓宽了我们的视野。这些都是我们所认识的时尚中国。\n\n中国，是一个多样而立体的国家。无论是古老的长城、京剧，还是现代的高铁、移动支付，无论是好玩的中华美食、广场舞，还是新生的共享单车、互联网，都是中国的一部分，都是我们所认识的中国。\n\n这就是你所认识的中国，一个古老而又现代，好玩而又生机勃勃的国家。这个中国，是我们共同的家园，我们共同的骄傲。让我们一起，用中国梦激扬青春梦，关心现实国情与改革发展，展示我们的理想信念、精神状态与综合素质，讲好中国故事，呈现你所认识的中国。', 1690946228361175042, '2024-04-04 21:40:15', '2024-04-04 21:40:15', 0);
 
--- ----------------------------
--- Table structure for orders
--- ----------------------------
-DROP TABLE IF EXISTS `orders`;
-CREATE TABLE `orders`
-(
-    `id`            bigint(20)                                                    NOT NULL AUTO_INCREMENT COMMENT '订单id',
-    `alipayTradeNo` varchar(128) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL     DEFAULT NULL COMMENT '支付宝交易凭证id',
-    `userId`        bigint(20)                                                    NOT NULL COMMENT '用户id',
-    `subject`       varchar(128) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '交易名称',
-    `totalAmount`   double                                                        NOT NULL COMMENT '交易金额',
-    `tradeStatus`   varchar(128) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'unpaid ' COMMENT 'unpaid,paying,succeed,failed',
-    `buyerId`       varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci  NULL     DEFAULT NULL COMMENT '支付宝买家id',
-    `createTime`    datetime                                                      NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-    `updateTime`    datetime                                                      NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
-    `isDelete`      tinyint(4)                                                    NOT NULL DEFAULT 0 COMMENT '是否删除',
-    PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB
-  AUTO_INCREMENT = 1
-  CHARACTER SET = utf8mb4
-  COLLATE = utf8mb4_unicode_ci COMMENT = '充值订单表'
-  ROW_FORMAT = Dynamic;
 
--- ----------------------------
--- Records of orders
--- ----------------------------
 
--- ----------------------------
--- Table structure for text_record
--- ----------------------------
-DROP TABLE IF EXISTS `text_record`;
-CREATE TABLE `text_record`
-(
-    `id`             bigint(20)                                                    NOT NULL AUTO_INCREMENT COMMENT 'id',
-    `textTaskId`     bigint(20)                                                    NULL     DEFAULT NULL COMMENT '文本任务id',
-    `textContent`    text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci         NULL COMMENT '文本内容',
-    `genTextContent` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci         NULL COMMENT '生成的文本内容',
-    `status`         varchar(128) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'wait' COMMENT 'wait,running,succeed,failed',
-    `execMessage`    text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci         NULL COMMENT '执行信息',
-    `createTime`     datetime                                                      NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-    `updateTime`     datetime                                                      NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
-    `isDelete`       tinyint(4)                                                    NOT NULL DEFAULT 0 COMMENT '是否删除',
-    PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB
-  AUTO_INCREMENT = 1692864897932627971
-  CHARACTER SET = utf8mb4
-  COLLATE = utf8mb4_unicode_ci COMMENT = '文本记录表'
-  ROW_FORMAT = Dynamic;
-
--- ----------------------------
--- Records of text_record
--- ----------------------------
-INSERT INTO `text_record`
-VALUES (1690745787899801602, 1690745787899801601, '你好啊', NULL, 'wait', NULL, '2023-08-13 23:23:03',
-        '2023-08-13 23:23:03', 0);
-INSERT INTO `text_record`
-VALUES (1690748119328845827, 1690748119328845826, '你好啊', NULL, 'wait', NULL, '2023-08-13 23:32:18',
-        '2023-08-13 23:32:18', 0);
-INSERT INTO `text_record`
-VALUES (1691394436111585281, 1691394436061253634, '你好啊',
-        '你好啊！很高兴能为您提供帮助。不过，Markdown格式是一种用于文本排版的轻量级标记语言，只支持对文本的格式进行简单的美化和排版。如果你想要对文章进行排版和格式化，可以使用Markdown的语法进行编辑。以下是一些常见的Markdown语法示例：\n\n1. 标题：\n   使用\'#\'符号表示不同级别的标题，例如：  \n   # 一级标题  \n   ## 二级标题  \n   ### 三级标题  \n   以此类推。\n\n2. 强调：\n   使用\'*\'或\'_\'包围文本来使其斜体，例如：  \n   *斜体* 或 _斜体_\n\n   使用双\'*\'或双\'_\'包围文本来使其加粗，例如：  \n   **加粗** 或 __加粗__\n\n3. 列表：\n   使用\'*\'或\'-\'创建无序列表，例如：  \n   - 项目1\n   - 项目2\n   - 项目3\n\n   使用数字加\'.\'创建有序列表，例如：  \n   1. 项目1\n   2. 项目2\n   3. 项目3\n\n4. 链接和图片：\n   使用\'[链接文本](链接地址)\'创建链接，例如：  \n   [谷歌](https://www.google.com)\n\n   使用\'![图片描述](图片链接地址)\'插入图片，例如：  \n   ![图片示例](https://example.com/image.jpg)\n\n5. 引用：\n   使用\'>\'符号表示引用内容，例如：  \n   > 这是引用的内容\n\n这只是Markdown语法的一小部分示例，你可以根据需要进行排版和格式化。希望对你有所帮助！如果你还有其他问题，请随时提问。',
-        'succeed', NULL, '2023-08-15 18:20:32', '2023-08-15 18:20:32', 0);
-INSERT INTO `text_record`
-VALUES (1692008620474023939, 1692008620474023938, '你好啊', '你好啊！很高兴能够与你交流。有什么我能帮助你的吗？',
-        'succeed', NULL, '2023-08-17 11:01:05', '2023-08-17 11:01:05', 0);
-INSERT INTO `text_record`
-VALUES (1692864897932627970, 1692864897932627969, '你好啊', '你好啊。', 'succeed', NULL, '2023-08-19 19:43:38',
-        '2023-08-19 19:43:38', 0);
-
--- ----------------------------
--- Table structure for text_task
--- ----------------------------
-DROP TABLE IF EXISTS `text_task`;
-CREATE TABLE `text_task`
-(
-    `id`             bigint(20)                                                    NOT NULL AUTO_INCREMENT COMMENT '任务id',
-    `name`           varchar(128) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL     DEFAULT NULL COMMENT '笔记名称',
-    `textType`       varchar(128) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL     DEFAULT NULL COMMENT '文本类型',
-    `genTextContent` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci         NULL COMMENT '生成的文本内容',
-    `userId`         bigint(20)                                                    NULL     DEFAULT NULL COMMENT '创建用户Id',
-    `status`         varchar(128) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'wait' COMMENT 'wait,running,succeed,failed',
-    `execMessage`    text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci         NULL COMMENT '执行信息',
-    `createTime`     datetime                                                      NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-    `updateTime`     datetime                                                      NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
-    `isDelete`       tinyint(4)                                                    NOT NULL DEFAULT 0 COMMENT '是否删除',
-    PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB
-  AUTO_INCREMENT = 1692864897932627970
-  CHARACTER SET = utf8mb4
-  COLLATE = utf8mb4_unicode_ci COMMENT = '文本任务表'
-  ROW_FORMAT = Dynamic;
-
--- ----------------------------
--- Records of text_task
--- ----------------------------
-INSERT INTO `text_task`
-VALUES (1690716261555761153, 'nihao', 'nihao', NULL, 1690592362125934594, 'wait', NULL, '2023-08-13 21:25:43',
-        '2023-08-13 21:25:43', 0);
-INSERT INTO `text_task`
-VALUES (1690903271629201409, '你好啊', 'markdown', NULL, 1690592362125934594, 'wait', NULL, '2023-08-14 09:48:50',
-        '2023-08-14 09:48:50', 0);
-INSERT INTO `text_task`
-VALUES (1691394436061253634, '你好啊', 'markdown',
-        '你好啊！很高兴能为您提供帮助。不过，Markdown格式是一种用于文本排版的轻量级标记语言，只支持对文本的格式进行简单的美化和排版。如果你想要对文章进行排版和格式化，可以使用Markdown的语法进行编辑。以下是一些常见的Markdown语法示例：\n\n1. 标题：\n   使用\'#\'符号表示不同级别的标题，例如：  \n   # 一级标题  \n   ## 二级标题  \n   ### 三级标题  \n   以此类推。\n\n2. 强调：\n   使用\'*\'或\'_\'包围文本来使其斜体，例如：  \n   *斜体* 或 _斜体_\n\n   使用双\'*\'或双\'_\'包围文本来使其加粗，例如：  \n   **加粗** 或 __加粗__\n\n3. 列表：\n   使用\'*\'或\'-\'创建无序列表，例如：  \n   - 项目1\n   - 项目2\n   - 项目3\n\n   使用数字加\'.\'创建有序列表，例如：  \n   1. 项目1\n   2. 项目2\n   3. 项目3\n\n4. 链接和图片：\n   使用\'[链接文本](链接地址)\'创建链接，例如：  \n   [谷歌](https://www.google.com)\n\n   使用\'![图片描述](图片链接地址)\'插入图片，例如：  \n   ![图片示例](https://example.com/image.jpg)\n\n5. 引用：\n   使用\'>\'符号表示引用内容，例如：  \n   > 这是引用的内容\n\n这只是Markdown语法的一小部分示例，你可以根据需要进行排版和格式化。希望对你有所帮助！如果你还有其他问题，请随时提问。\n',
-        1690946228361175042, 'succeed', NULL, '2023-08-15 18:20:32', '2023-08-15 18:21:17', 0);
-INSERT INTO `text_task`
-VALUES (1692008620474023938, '你好啊', 'markdown', '你好啊！很高兴能够与你交流。有什么我能帮助你的吗？\n',
-        1690946228361175042, 'succeed', NULL, '2023-08-17 11:01:05', '2023-08-17 11:01:09', 0);
-INSERT INTO `text_task`
-VALUES (1692864897932627969, '1111', 'markdown', '你好啊。\n', 1690946228361175042, 'succeed', NULL,
-        '2023-08-19 19:43:38', '2023-08-19 19:43:38', 0);
 
 -- ----------------------------
 -- Table structure for user
 -- ----------------------------
 DROP TABLE IF EXISTS `user`;
-CREATE TABLE `user`
-(
-    `id`           bigint(20)                                                     NOT NULL AUTO_INCREMENT COMMENT 'id',
-    `userAccount`  varchar(256) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci  NOT NULL COMMENT '账号',
-    `userPassword` varchar(512) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci  NOT NULL COMMENT '密码',
-    `userName`     varchar(256) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci  NULL     DEFAULT NULL COMMENT '用户昵称',
-    `userAvatar`   varchar(1024) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL     DEFAULT NULL COMMENT '用户头像',
-    `userRole`     varchar(256) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci  NOT NULL DEFAULT 'user' COMMENT 'user-普通用户 admin-管理员',
-    `gender`       varchar(256) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci  NULL     DEFAULT '男' COMMENT '性别 男 女',
-    `phone`        varchar(128) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci  NULL     DEFAULT NULL COMMENT '电话',
-    `email`        varchar(512) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci  NULL     DEFAULT NULL COMMENT '邮箱',
-    `userStatus`   int(11)                                                        NOT NULL DEFAULT 0 COMMENT '状态 0 - 正常 1-注销 2-封号',
-    `createTime`   datetime                                                       NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-    `updateTime`   datetime                                                       NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
-    `isDelete`     tinyint(4)                                                     NOT NULL DEFAULT 0 COMMENT '是否删除',
-    PRIMARY KEY (`id`) USING BTREE,
-    INDEX `idx_userAccount` (`userAccount`) USING BTREE
-) ENGINE = InnoDB
-  AUTO_INCREMENT = 1690946228361175043
-  CHARACTER SET = utf8mb4
-  COLLATE = utf8mb4_unicode_ci COMMENT = '用户'
-  ROW_FORMAT = Dynamic;
+CREATE TABLE `user`  (
+                         `id` bigint NOT NULL AUTO_INCREMENT COMMENT 'id',
+                         `userAccount` varchar(256) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '账号',
+                         `userPassword` varchar(512) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '密码',
+                         `userName` varchar(256) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL COMMENT '用户昵称',
+                         `userAvatar` varchar(1024) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL COMMENT '用户头像',
+                         `userRole` varchar(256) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'user' COMMENT 'user-普通用户 admin-管理员',
+                         `gender` varchar(256) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT '男' COMMENT '性别 男 女',
+                         `phone` varchar(128) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL COMMENT '电话',
+                         `email` varchar(512) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL COMMENT '邮箱',
+                         `userStatus` int NOT NULL DEFAULT 0 COMMENT '状态 0 - 正常 1-注销 2-封号',
+                         `createTime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+                         `updateTime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+                         `isDelete` tinyint NOT NULL DEFAULT 0 COMMENT '是否删除',
+                         PRIMARY KEY (`id`) USING BTREE,
+                         INDEX `idx_userAccount`(`userAccount` ASC) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 1774468198644924418 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '用户' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user`
-VALUES (1690592362125934594, 'nancheng', '12345678', 'nancheng',
-        'https://avatars.githubusercontent.com/u/104661473?v=4', 'admin', '男', '16638747874', 'nanchnegyu02@qq.com', 0,
-        '2023-08-13 13:13:23', '2023-08-14 17:38:43', 1);
-INSERT INTO `user`
-VALUES (1690741578617942018, 'nanchengyu', '12345678', 'nanchengyu',
-        'https://avatars.githubusercontent.com/u/104661473?v=4', 'user', '男', NULL, NULL, 0, '2023-08-13 23:06:19',
-        '2023-08-14 17:38:38', 1);
-INSERT INTO `user`
-VALUES (1690946228361175042, 'nanchengyu02', '8b1b4a2bb93396357991785733c79efd', '南城余',
-        'https://avatars.githubusercontent.com/u/104661473?v=4', 'admin', '男', NULL, NULL, 0, '2023-08-14 12:39:31',
-        '2023-08-16 09:36:34', 0);
+INSERT INTO `user` VALUES (1690946228361175042, 'nanchengyu02', '8b1b4a2bb93396357991785733c79efd', '南城余', 'http://localhost:8001/api/oss/download/头像 - 副本.png', 'admin', '男', NULL, NULL, 0, '2023-08-14 12:39:31', '2024-04-04 21:46:09', 0);
+INSERT INTO `user` VALUES (1773738868964888578, 'lixinlong', '8b1b4a2bb93396357991785733c79efd', 'lixinlong', 'https://avatars.githubusercontent.com/u/104661473?v=4', 'user', '男', NULL, NULL, 0, '2024-03-29 23:47:54', '2024-03-29 23:47:54', 0);
+INSERT INTO `user` VALUES (1774468198644924417, 'zhuzheng', '8b1b4a2bb93396357991785733c79efd', 'zhuzheng', 'https://avatars.githubusercontent.com/u/104661473?v=4', 'user', '男', NULL, NULL, 0, '2024-04-01 00:06:00', '2024-04-01 00:06:00', 0);
 
 -- ----------------------------
 -- Table structure for user_code
 -- ----------------------------
 DROP TABLE IF EXISTS `user_code`;
-CREATE TABLE `user_code`
-(
-    `id`         bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
-    `userId`     bigint(20) NOT NULL COMMENT '用户id',
-    `createTime` datetime   NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-    `updateTime` datetime   NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
-    `isDelete`   tinyint(4) NOT NULL DEFAULT 0 COMMENT '是否删除',
-    PRIMARY KEY (`id`) USING BTREE,
-    INDEX `idx_userAccount` (`id`) USING BTREE
-) ENGINE = InnoDB
-  AUTO_INCREMENT = 5
-  CHARACTER SET = utf8mb4
-  COLLATE = utf8mb4_unicode_ci COMMENT = '用户'
-  ROW_FORMAT = Dynamic;
+CREATE TABLE `user_code`  (
+                              `id` bigint NOT NULL AUTO_INCREMENT COMMENT 'id',
+                              `userId` bigint NOT NULL COMMENT '用户id',
+                              `createTime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+                              `updateTime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+                              `isDelete` tinyint NOT NULL DEFAULT 0 COMMENT '是否删除',
+                              PRIMARY KEY (`id`) USING BTREE,
+                              INDEX `idx_userAccount`(`id` ASC) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '用户' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of user_code
 -- ----------------------------
-INSERT INTO `user_code`
-VALUES (1, 1690580805534887938, '2023-08-13 12:27:28', '2023-08-13 12:27:28', 0);
-INSERT INTO `user_code`
-VALUES (2, 1690592362125934594, '2023-08-13 13:13:23', '2023-08-13 13:13:23', 0);
-INSERT INTO `user_code`
-VALUES (3, 1690741578617942018, '2023-08-13 23:06:19', '2023-08-13 23:06:19', 0);
-INSERT INTO `user_code`
-VALUES (4, 1690946228361175042, '2023-08-14 12:39:31', '2023-08-14 12:39:31', 0);
+INSERT INTO `user_code` VALUES (1, 1690580805534887938, '2023-08-13 12:27:28', '2023-08-13 12:27:28', 0);
+INSERT INTO `user_code` VALUES (2, 1690592362125934594, '2023-08-13 13:13:23', '2023-08-13 13:13:23', 0);
+INSERT INTO `user_code` VALUES (3, 1690741578617942018, '2023-08-13 23:06:19', '2023-08-13 23:06:19', 0);
+INSERT INTO `user_code` VALUES (4, 1690946228361175042, '2023-08-14 12:39:31', '2023-08-14 12:39:31', 0);
+INSERT INTO `user_code` VALUES (5, 1773738868964888578, '2024-03-29 23:47:55', '2024-03-29 23:47:55', 0);
+INSERT INTO `user_code` VALUES (6, 1774468198644924417, '2024-04-01 00:06:00', '2024-04-01 00:06:00', 0);
 
 SET FOREIGN_KEY_CHECKS = 1;
-
-
-DROP TABLE IF EXISTS `essay`;
-CREATE TABLE `essay`
-(
-    `id`         bigint(20)                                                    NOT NULL AUTO_INCREMENT COMMENT 'id',
-    `essayName`  text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL     DEFAULT NULL COMMENT '文章名称',
-    `essayType`  varchar(256) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL     DEFAULT NULL COMMENT '文章类型',
-    `genEssay`   text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci         NULL COMMENT '生成的文章内容',
-    `userId`     bigint(20)                                                    NULL     DEFAULT NULL COMMENT '创建文章用户 id',
-    `createTime` datetime                                                      NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-    `updateTime` datetime                                                      NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
-    `isDelete`   tinyint(4)                                                    NOT NULL DEFAULT 0 COMMENT '是否删除',
-    PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB
-  AUTO_INCREMENT = 1731623236617977858
-  CHARACTER SET = utf8mb4
-  COLLATE = utf8mb4_unicode_ci COMMENT = '文章信息表'
-  ROW_FORMAT = DYNAMIC;
