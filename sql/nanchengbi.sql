@@ -167,7 +167,7 @@ CREATE TABLE `alipay_info`
 ) ENGINE = InnoDB
   AUTO_INCREMENT = 1692067475182600194
   CHARACTER SET = utf8mb4
-  COLLATE = utf8mb4_unicode_ci COMMENT = '次数订单表'
+  COLLATE = utf8mb4_unicode_ci COMMENT = '支付宝订单表'
   ROW_FORMAT = Dynamic;
 
 -- ----------------------------
