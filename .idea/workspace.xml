@@ -7,16 +7,11 @@
     <list default="true" id="879a5b8c-91c5-4465-b2d4-8f216e7eadd8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/790c9f87-2283-442a-8eac-b2f0d6fbf839.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/790c9f87-2283-442a-8eac-b2f0d6fbf839.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/790c9f87-2283-442a-8eac-b2f0d6fbf839/storage_v2/_src_/schema/techmindwave.4YqpnQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/790c9f87-2283-442a-8eac-b2f0d6fbf839/storage_v2/_src_/schema/techmindwave.4YqpnQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sql/nanchengbi.sql" beforeDir="false" afterPath="$PROJECT_DIR$/sql/nanchengbi.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/mapper/OrdersMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/model/dto/order/OrderAddRequest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/model/dto/order/OrderUpdateRequest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/model/entity/Orders.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/service/OrdersService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/service/impl/OrdersServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/OrdersMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/controller/AliPayController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/controller/AliPayController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/controller/TextConstant.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/service/impl/ChartServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/service/impl/ChartServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/nanchengyu/nanchengyubi/manager/AiManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/nanchengyu/nanchengyubi/manager/AiManagerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +45,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;finall&quot;,
     &quot;last_opened_file_path&quot;: &quot;D:/A-yupixiangmu/BI/TechMindWave-backend&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -136,23 +131,14 @@
       <workItem from="1712223520300" duration="5569000" />
       <workItem from="1712239012632" duration="17000" />
       <workItem from="1712582239279" duration="1728000" />
-      <workItem from="1712940163418" duration="4727000" />
+      <workItem from="1712940163418" duration="5896000" />
+      <workItem from="1713001237199" duration="606000" />
+      <workItem from="1713001931622" duration="11446000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/service/impl/ChartServiceImpl.java</url>
-          <line>358</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

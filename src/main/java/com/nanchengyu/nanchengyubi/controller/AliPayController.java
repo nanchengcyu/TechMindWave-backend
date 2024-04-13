@@ -140,7 +140,9 @@ public class AliPayController {
         }
         long alipayAccountNo = alipayInfoService.getPayNo(orderId, loginUser.getId());
         //String url = String.format("http://xxxxxx:8103/api/alipay/pay?alipayAccountNo=%s", alipayAccountNo);
-        String url = String.format("http://localhost:8001/api/alipay/pay?alipayAccountNo=%s", alipayAccountNo);
+        //   http://usvu7e.natappfree.cc
+//        String url = String.format("http://localhost:8001/api/alipay/pay?alipayAccountNo=%s", alipayAccountNo);
+        String url = String.format("http://usvu7e.natappfree.cc/api/alipay/pay?alipayAccountNo=%s", alipayAccountNo);
         String generateQrCode = QrCodeUtil.generateAsBase64(url, new QrConfig(400, 400), "png");
         AlipayInfoVO alipayInfoVO = new AlipayInfoVO();
         alipayInfoVO.setAlipayAccountNo(String.valueOf(alipayAccountNo));

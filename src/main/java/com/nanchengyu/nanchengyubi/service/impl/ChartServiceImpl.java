@@ -5,7 +5,6 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.nanchengyu.nanchengyubi.constant.ChartConstant;
 import com.nanchengyu.nanchengyubi.bizmq.BiMqMessageProducer;
 import com.nanchengyu.nanchengyubi.common.ErrorCode;
-import com.nanchengyu.nanchengyubi.controller.TextConstant;
 import com.nanchengyu.nanchengyubi.exception.BusinessException;
 import com.nanchengyu.nanchengyubi.exception.ThrowUtils;
 import com.nanchengyu.nanchengyubi.manager.AiManager;
@@ -237,7 +236,7 @@ public class ChartServiceImpl extends ServiceImpl<ChartMapper, Chart> implements
                 return;
             }
             // 调用AI
-            String chartResult = aiManager.doChat(userInput.toString(), TextConstant.MODE_ID);
+            String chartResult = aiManager.sendMesToAIUseXingHuo(AiManager.PRECONDITION + userInput);
 
             // 解析内容
             String[] splits = chartResult.split(ChartConstant.GEN_CONTENT_SPLITS);
