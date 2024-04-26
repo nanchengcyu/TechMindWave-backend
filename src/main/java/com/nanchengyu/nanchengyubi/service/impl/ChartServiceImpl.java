@@ -1,6 +1,8 @@
 package com.nanchengyu.nanchengyubi.service.impl;
 
 import cn.hutool.core.io.FileUtil;
+import cn.hutool.json.JSONObject;
+import cn.hutool.json.JSONUtil;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.nanchengyu.nanchengyubi.constant.ChartConstant;
 import com.nanchengyu.nanchengyubi.bizmq.BiMqMessageProducer;
@@ -117,6 +119,8 @@ public class ChartServiceImpl extends ServiceImpl<ChartMapper, Chart> implements
         if (splits.length < ChartConstant.GEN_ITEM_NUM) {
             throw new BusinessException(ErrorCode.SYSTEM_ERROR, "AI生成错误");
         }
+
+
         // 首次生成的内容
         String preGenChart = splits[ChartConstant.GEN_CHART_IDX].trim();
         String genResult = splits[ChartConstant.GEN_RESULT_IDX].trim();
@@ -134,9 +138,14 @@ public class ChartServiceImpl extends ServiceImpl<ChartMapper, Chart> implements
         chart.setChartStatus(ChartStatusEnum.SUCCEED.getValue());
         boolean saveResult = this.save(chart);
         ThrowUtils.throwIf(!saveResult, ErrorCode.SYSTEM_ERROR, "图表保存失败");
-        // 返回到前端
+        // todo 修改 返回到前端
+//        String getResult = split[2].trim();
+//        JSONObject jsonObject = JSONUtil.parseObj(getChart2);
+//        String getChart = JSONUtil.toJsonStr(jsonObject);
         BiResponse biResponse = new BiResponse();
         //biResponse.setGenChart(validGenChart);
+//        JSONObject jsonObject = JSONUtil.parseObj(preGenChart);
+//        String finalGenChart = JSONUtil.toJsonStr(jsonObject);
         biResponse.setGenChart(preGenChart);
         biResponse.setChartId(chart.getId());
         biResponse.setGenResult(genResult);

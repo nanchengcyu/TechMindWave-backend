@@ -5,13 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="879a5b8c-91c5-4465-b2d4-8f216e7eadd8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/790c9f87-2283-442a-8eac-b2f0d6fbf839.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/790c9f87-2283-442a-8eac-b2f0d6fbf839.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/controller/AliPayController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/controller/AliPayController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/controller/TextConstant.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/constant/ChartConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/constant/ChartConstant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/manager/AiManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/manager/AiManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/service/impl/ChartServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/service/impl/ChartServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/nanchengyu/nanchengyubi/manager/AiManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/nanchengyu/nanchengyubi/manager/AiManagerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,7 +130,11 @@
       <workItem from="1712582239279" duration="1728000" />
       <workItem from="1712940163418" duration="5896000" />
       <workItem from="1713001237199" duration="606000" />
-      <workItem from="1713001931622" duration="11446000" />
+      <workItem from="1713001931622" duration="11505000" />
+      <workItem from="1713536971075" duration="16000" />
+      <workItem from="1713867511007" duration="25000" />
+      <workItem from="1713956816989" duration="23000" />
+      <workItem from="1714096956687" duration="4009000" />
     </task>
     <servers />
   </component>

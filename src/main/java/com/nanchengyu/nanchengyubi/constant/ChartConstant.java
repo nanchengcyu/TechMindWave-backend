@@ -11,7 +11,7 @@ public interface ChartConstant {
     /**
      * AI生成的内容分隔符
      */
-    String GEN_CONTENT_SPLITS = "【【【【【";
+    String GEN_CONTENT_SPLITS = "'【【【【【'";
 
     /**
      * AI 生成的内容的元素为3个
