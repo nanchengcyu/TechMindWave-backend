@@ -138,7 +138,7 @@ public class ChartServiceImpl extends ServiceImpl<ChartMapper, Chart> implements
         chart.setChartStatus(ChartStatusEnum.SUCCEED.getValue());
         boolean saveResult = this.save(chart);
         ThrowUtils.throwIf(!saveResult, ErrorCode.SYSTEM_ERROR, "图表保存失败");
-        // todo 修改 返回到前端
+        // todo 不需要修改 返回到前端
 //        String getResult = split[2].trim();
 //        JSONObject jsonObject = JSONUtil.parseObj(getChart2);
 //        String getChart = JSONUtil.toJsonStr(jsonObject);
