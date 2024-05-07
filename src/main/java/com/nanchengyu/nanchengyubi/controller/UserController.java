@@ -42,7 +42,7 @@ import java.util.List;
 //@CrossOrigin(origins = "http://localhost:800", allowCredentials = "true")
 //@CrossOrigin(origins = "https://techmindwave.nanchengyu.cn", allowCredentials = "true")
 
-@CrossOrigin(origins = {"https://techmindwave.nanchengyu.cn", "http://localhost:800"}, allowCredentials = "true")
+@CrossOrigin(origins = {"https://techmindwave.nanchengyu.cn", "http://localhost:800","http://localhost:50502","http://127.0.0.1:50502"}, allowCredentials = "true")
 public class UserController {
     @Resource
     private UserService userService;

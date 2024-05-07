@@ -28,12 +28,6 @@ import java.util.List;
 public class AiManager {
 
     @Resource
-    private YuCongMingClient congMingClient;
-
-    @Resource
-    private AiModelConfig aiModelConfig;
-
-    @Resource
     private SparkClient sparkClient;
     /**
      * AI 生成问题的预设条件
@@ -93,33 +87,5 @@ public class AiManager {
         return responseContent;
     }
 
-    /**
-     * AI 对话
-     *
-     * @param message 消息
-     * @param modeId
-     * @return
-     */
-    public String doChat(String message, Long modeId) {
-        DevChatRequest devChatRequest = new DevChatRequest();
-        // 鱼聪明平台模型ID
-        devChatRequest.setModelId(aiModelConfig.getModelId());
-        devChatRequest.setMessage(message);
-        BaseResponse<DevChatResponse> response = congMingClient.doChat(devChatRequest);
-        if (response == null) {
-            throw new BusinessException(ErrorCode.SYSTEM_ERROR, "AI 响应错误");
-        }
-        return response.getData().getContent();
-    }
 
-    public String doAiChat(Long modelId, String message) {
-        DevChatRequest devChatRequest = new DevChatRequest();
-        devChatRequest.setModelId(modelId);
-        devChatRequest.setMessage(message);
-        BaseResponse<DevChatResponse> response = congMingClient.doChat(devChatRequest);
-        if (response == null) {
-            throw new BusinessException(ErrorCode.SYSTEM_ERROR, "AI 响应错误");
-        }
-        return response.getData().getContent();
-    }
 }
