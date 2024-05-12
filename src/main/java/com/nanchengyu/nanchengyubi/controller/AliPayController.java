@@ -142,7 +142,7 @@ public class AliPayController {
         //String url = String.format("http://xxxxxx:8103/api/alipay/pay?alipayAccountNo=%s", alipayAccountNo);
         //   http://usvu7e.natappfree.cc
 //        String url = String.format("http://localhost:8001/api/alipay/pay?alipayAccountNo=%s", alipayAccountNo);
-        // todo 支付宝调用地址修改 穿透工具 natapp 在项目目录下安装着
+        // todo  内网地址 穿透工具 natapp 在项目目录下安装着
         String url = String.format("http://usvu7e.natappfree.cc/api/alipay/pay?alipayAccountNo=%s", alipayAccountNo);
         String generateQrCode = QrCodeUtil.generateAsBase64(url, new QrConfig(400, 400), "png");
         AlipayInfoVO alipayInfoVO = new AlipayInfoVO();

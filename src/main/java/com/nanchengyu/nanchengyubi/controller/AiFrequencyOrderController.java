@@ -55,7 +55,7 @@ public class AiFrequencyOrderController {
     @Resource
     private UserService userService;
 
-    final Double price = 0.1;
+    final Double price = 0.01;
 
     /**
      * 添加订单

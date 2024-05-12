@@ -1025,8 +1025,8 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <schema id="280" parent="1" name="techmindwave">
-      <IntrospectionTimestamp>2024-04-13.10:12:49</IntrospectionTimestamp>
-      <LocalIntrospectionTimestamp>2024-04-12.18:12:50</LocalIntrospectionTimestamp>
+      <IntrospectionTimestamp>2024-05-12.23:19:50</IntrospectionTimestamp>
+      <LocalIntrospectionTimestamp>2024-05-12.07:19:49</LocalIntrospectionTimestamp>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <user id="281" parent="1" name="root">
@@ -1108,7 +1108,7 @@ DYNAMIC</Options>
       <CollationName>utf8mb4_unicode_ci</CollationName>
     </table>
     <column id="294" parent="286" name="id">
-      <AutoIncrement>1777331179619659778</AutoIncrement>
+      <AutoIncrement>1779174448993460227</AutoIncrement>
       <Comment>id</Comment>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
@@ -1184,7 +1184,7 @@ DYNAMIC</Options>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="307" parent="287" name="id">
-      <AutoIncrement>1774468199114686467</AutoIncrement>
+      <AutoIncrement>1778866026347581443</AutoIncrement>
       <Comment>id</Comment>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
@@ -1206,7 +1206,7 @@ DYNAMIC</Options>
     <column id="310" parent="287" name="remainFrequency">
       <Comment>剩余调用次数</Comment>
       <DasType>int|0s</DasType>
-      <DefaultExpression>5</DefaultExpression>
+      <DefaultExpression>100</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
@@ -1243,7 +1243,7 @@ DYNAMIC</Options>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="316" parent="288" name="id">
-      <AutoIncrement>1775884256165523459</AutoIncrement>
+      <AutoIncrement>1789555392921296899</AutoIncrement>
       <Comment>id</Comment>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
@@ -1313,7 +1313,7 @@ DYNAMIC</Options>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="327" parent="289" name="id">
-      <AutoIncrement>1775883297708339202</AutoIncrement>
+      <AutoIncrement>1789552065865089027</AutoIncrement>
       <Comment>id</Comment>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
@@ -1387,7 +1387,7 @@ DYNAMIC</Options>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="339" parent="290" name="id">
-      <AutoIncrement>1777328462344007682</AutoIncrement>
+      <AutoIncrement>1787047864568233986</AutoIncrement>
       <Comment>id</Comment>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
@@ -1473,7 +1473,7 @@ DYNAMIC</Options>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="354" parent="291" name="id">
-      <AutoIncrement>1777328693198499842</AutoIncrement>
+      <AutoIncrement>1779118761013723139</AutoIncrement>
       <Comment>id</Comment>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
@@ -1532,7 +1532,7 @@ DYNAMIC</Options>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="364" parent="292" name="id">
-      <AutoIncrement>1774468198644924418</AutoIncrement>
+      <AutoIncrement>1778866025248673795</AutoIncrement>
       <Comment>id</Comment>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
@@ -1627,7 +1627,7 @@ DYNAMIC</Options>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="380" parent="293" name="id">
-      <AutoIncrement>7</AutoIncrement>
+      <AutoIncrement>8</AutoIncrement>
       <Comment>id</Comment>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>

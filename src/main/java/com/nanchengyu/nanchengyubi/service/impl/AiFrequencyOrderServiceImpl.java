@@ -80,7 +80,7 @@ public class AiFrequencyOrderServiceImpl extends ServiceImpl<AiFrequencyOrderMap
         AiFrequencyOrder order = new AiFrequencyOrder();
         BeanUtils.copyProperties(orderUpdateRequest, order);
         order.setId(id);
-        Double price = 0.1;
+        Double price = 0.01;
         order.setTotalAmount(purchaseQuantity * price);
         order.setOrderStatus(Integer.valueOf(PayOrderEnum.WAIT_PAY.getValue()));
         boolean result = this.updateById(order);

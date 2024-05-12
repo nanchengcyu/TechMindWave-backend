@@ -98,7 +98,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
                 throw new BusinessException(ErrorCode.SYSTEM_ERROR, "注册失败，数据库错误");
             }
 
-            // 用户注册，保存用户调用次数
+            // 用户注册，保存用户调用次数  默认100次
             AiFrequency aiFrequency = new AiFrequency();
             aiFrequency.setUserId(user.getId());
             aiFrequencyService.save(aiFrequency);
