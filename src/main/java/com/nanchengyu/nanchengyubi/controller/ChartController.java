@@ -13,6 +13,7 @@ import com.nanchengyu.nanchengyubi.constant.UserConstant;
 import com.nanchengyu.nanchengyubi.exception.BusinessException;
 import com.nanchengyu.nanchengyubi.exception.ThrowUtils;
 import com.nanchengyu.nanchengyubi.model.dto.chart.*;
+import com.nanchengyu.nanchengyubi.model.entity.AiAssistant;
 import com.nanchengyu.nanchengyubi.model.entity.Chart;
 import com.nanchengyu.nanchengyubi.model.entity.User;
 import com.nanchengyu.nanchengyubi.model.vo.BiResponse;
@@ -152,18 +153,21 @@ public class ChartController {
      * 分页获取列表（封装类）
      *
      * @param chartQueryRequest
-     * @param request
      * @return
      */
     @PostMapping("/list/page")
     @ApiOperation(value = "分页获取图表")
-    public BaseResponse<Page<Chart>> listChartByPage(@RequestBody ChartQueryRequest chartQueryRequest,
-                                                     HttpServletRequest request) {
+    public BaseResponse<Page<Chart>> listChartByPage(@RequestBody ChartQueryRequest chartQueryRequest) {
         long current = chartQueryRequest.getCurrent();
         long size = chartQueryRequest.getPageSize();
         // 限制爬虫
         ThrowUtils.throwIf(size > 20, ErrorCode.PARAMS_ERROR);
         Page<Chart> chartPage = chartService.page(new Page<>(current, size), getQueryWrapper(chartQueryRequest));
+        for (Chart chart : chartPage.getRecords()) {
+            Long userId = chart.getUserId();
+            User user = userService.getById(userId); // 假设userService是对用户表的服务
+            chart.setUser(user);
+        }
         return ResultUtils.success(chartPage);
     }
 

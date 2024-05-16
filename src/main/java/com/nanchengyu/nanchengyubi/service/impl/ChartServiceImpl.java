@@ -3,6 +3,7 @@ package com.nanchengyu.nanchengyubi.service.impl;
 import cn.hutool.core.io.FileUtil;
 import cn.hutool.json.JSONObject;
 import cn.hutool.json.JSONUtil;
+import com.alibaba.fastjson.JSONValidator;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.nanchengyu.nanchengyubi.constant.ChartConstant;
 import com.nanchengyu.nanchengyubi.bizmq.BiMqMessageProducer;
@@ -22,6 +23,7 @@ import com.nanchengyu.nanchengyubi.service.ChartService;
 import com.nanchengyu.nanchengyubi.service.UserService;
 import com.nanchengyu.nanchengyubi.utils.ChartUtils;
 import com.nanchengyu.nanchengyubi.utils.ExcelUtils;
+import com.nanchengyu.nanchengyubi.utils.JsonValidator;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -119,10 +121,10 @@ public class ChartServiceImpl extends ServiceImpl<ChartMapper, Chart> implements
             throw new BusinessException(ErrorCode.SYSTEM_ERROR, "AI生成错误");
         }
 
-
         // 首次生成的内容
         String preGenChart = splits[ChartConstant.GEN_CHART_IDX].trim();
         String genResult = splits[ChartConstant.GEN_RESULT_IDX].trim();
+
         // 插入数据到数据库
         Chart chart = new Chart();
         chartName = StringUtils.isBlank(chartName) ? ChartUtils.genDefaultChartName() : chartName;
@@ -130,6 +132,10 @@ public class ChartServiceImpl extends ServiceImpl<ChartMapper, Chart> implements
         chart.setChartData(csvData);
         chart.setChartName(chartName);
         chart.setChartType(chartType);
+        // 判断是否是有效的图表
+        if(!JsonValidator.isValidJson(preGenChart)){
+            chart.setGenChart(JsonValidator.CHART_DEFAULT);
+        }
         chart.setGenChart(preGenChart);
         //chart.setGenChart(validGenChart);
         chart.setGenResult(genResult);
@@ -137,7 +143,6 @@ public class ChartServiceImpl extends ServiceImpl<ChartMapper, Chart> implements
         chart.setChartStatus(ChartStatusEnum.SUCCEED.getValue());
         boolean saveResult = this.save(chart);
         ThrowUtils.throwIf(!saveResult, ErrorCode.SYSTEM_ERROR, "图表保存失败");
-        // todo 不需要修改 返回到前端
 //        String getResult = split[2].trim();
 //        JSONObject jsonObject = JSONUtil.parseObj(getChart2);
 //        String getChart = JSONUtil.toJsonStr(jsonObject);

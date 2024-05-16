@@ -14,6 +14,8 @@ import java.io.Serializable;
 
 @Data
 public class AiAssistantQueryRequest extends PageRequest implements Serializable {
+
+
     /**
      * id
      */

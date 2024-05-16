@@ -12,6 +12,7 @@ import com.nanchengyu.nanchengyubi.model.entity.AiAssistant;
 */
 public interface AiAssistantMapper extends BaseMapper<AiAssistant> {
 
+
 }
 
 

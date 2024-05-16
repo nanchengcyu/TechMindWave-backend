@@ -35,6 +35,9 @@ import org.springframework.web.bind.annotation.*;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 /**
  * @author nanchengyu
@@ -170,9 +173,20 @@ public class AiAssistantController {
         long size = aiAssistantQueryRequest.getPageSize();
         // 限制爬虫
         ThrowUtils.throwIf(size > 20, ErrorCode.PARAMS_ERROR);
+
         Page<AiAssistant> assistantPage = aiAssistantService.page(new Page<>(current, size), getQueryWrapper(aiAssistantQueryRequest));
+
+        // 获取每个对话的用户信息并填充到AiAssistant对象中
+        for (AiAssistant assistant : assistantPage.getRecords()) {
+            Long userId = assistant.getUserId();
+            User user = userService.getById(userId); // 假设userService是对用户表的服务
+            assistant.setUser(user);
+        }
+
         return ResultUtils.success(assistantPage);
     }
+
+
 
     /**
      * 分页获取当前用户创建的资源列表

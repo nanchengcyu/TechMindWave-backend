@@ -20,6 +20,7 @@ import com.nanchengyu.nanchengyubi.model.dto.Essay.EssayEditRequest;
 import com.nanchengyu.nanchengyubi.model.dto.Essay.EssayQueryRequest;
 import com.nanchengyu.nanchengyubi.model.dto.Essay.EssayUpdateRequest;
 
+import com.nanchengyu.nanchengyubi.model.entity.Chart;
 import com.nanchengyu.nanchengyubi.model.entity.Essay;
 import com.nanchengyu.nanchengyubi.model.entity.User;
 import com.nanchengyu.nanchengyubi.model.vo.BiResponse;
@@ -180,18 +181,22 @@ public class EssayController {
      * 分页获取列表（封装类）
      *
      * @param essayQueryRequest
-     * @param request
      * @return
      */
     @PostMapping("/list/page")
-    public BaseResponse<Page<Essay>> listEssayByPage(@RequestBody EssayQueryRequest essayQueryRequest,
-                                                     HttpServletRequest request) {
+    public BaseResponse<Page<Essay>> listEssayByPage(@RequestBody EssayQueryRequest essayQueryRequest) {
         long current = essayQueryRequest.getCurrent();
         long size = essayQueryRequest.getPageSize();
         // 限制爬虫
         ThrowUtils.throwIf(size > 20, ErrorCode.PARAMS_ERROR);
         Page<Essay> essayPage = essayService.page(new Page<>(current, size),
                 getQueryWrapper(essayQueryRequest));
+
+        for (Essay essay : essayPage.getRecords()) {
+            Long userId = essay.getUserId();
+            User user = userService.getById(userId); // 假设userService是对用户表的服务
+            essay.setUser(user);
+        }
         return ResultUtils.success(essayPage);
     }
 

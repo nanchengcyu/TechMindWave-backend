@@ -24,4 +24,15 @@
         execMessage,userId,createTime,
         updateTime,isDelete
     </sql>
+    <select id="selectAiAssistantWithUserInfo"
+            resultType="com.nanchengyu.nanchengyubi.model.entity.AiAssistant">
+        SELECT a.*, u.username, u.userAvatar
+        FROM ai_assistant a
+        LEFT JOIN user u ON a.userId = u.id
+        <where>
+            <if test="ew != null and ew.sqlSegment != null and ew.sqlSegment != ''">
+                ${ew.sqlSegment}
+            </if>
+        </where>
+    </select>
 </mapper>

@@ -1,7 +1,12 @@
 package com.nanchengyu.nanchengyubi.service;
 
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.nanchengyu.nanchengyubi.common.BaseResponse;
+import com.nanchengyu.nanchengyubi.model.dto.aiassistant.AiAssistantQueryRequest;
 import com.nanchengyu.nanchengyubi.model.entity.AiAssistant;
 
 /**
@@ -10,5 +15,7 @@ import com.nanchengyu.nanchengyubi.model.entity.AiAssistant;
 * @createDate 2023-06-25 18:54:46
 */
 public interface AiAssistantService extends IService<AiAssistant> {
+
+
 
 }

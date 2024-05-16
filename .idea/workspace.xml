@@ -6,12 +6,20 @@
   <component name="ChangeListManager">
     <list default="true" id="879a5b8c-91c5-4465-b2d4-8f216e7eadd8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/790c9f87-2283-442a-8eac-b2f0d6fbf839.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/790c9f87-2283-442a-8eac-b2f0d6fbf839.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/790c9f87-2283-442a-8eac-b2f0d6fbf839/storage_v2/_src_/schema/techmindwave.4YqpnQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/790c9f87-2283-442a-8eac-b2f0d6fbf839/storage_v2/_src_/schema/techmindwave.4YqpnQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/controller/AiFrequencyOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/controller/AiFrequencyOrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/controller/AiAssistantController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/controller/AiAssistantController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/controller/AliPayController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/controller/AliPayController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/service/impl/AiFrequencyOrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/service/impl/AiFrequencyOrderServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/controller/ChartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/controller/ChartController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/controller/EssayController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/controller/EssayController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/mapper/AiAssistantMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/mapper/AiAssistantMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/model/dto/aiassistant/AiAssistantQueryRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/model/dto/aiassistant/AiAssistantQueryRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/model/entity/AiAssistant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/model/entity/AiAssistant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/model/entity/Chart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/model/entity/Chart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/model/entity/Essay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/model/entity/Essay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/service/AiAssistantService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/service/AiAssistantService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/service/impl/AiAssistantServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/service/impl/AiAssistantServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/service/impl/ChartServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/service/impl/ChartServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/AiAssistantMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/AiAssistantMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,35 +44,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;finall&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/A-yupixiangmu/BI/TechMindWave-backend&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "finall",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "D:/A-yupixiangmu/BI/TechMindWave-backend",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ],
+    "com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect": [
+      "MySQL"
     ]
   }
-}</component>
+}]]></component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -80,6 +91,7 @@
       <recent name="D:\A-yupixiangmu\BI\TechMindWave-backend\src\main\resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.nanchengyu.nanchengyubi.model.dto.aiassistant" />
       <recent name="com.nanchengyu.nanchengyubi.model.vo" />
     </key>
   </component>
@@ -144,7 +156,12 @@
       <workItem from="1714635504563" duration="1991000" />
       <workItem from="1714899941090" duration="1740000" />
       <workItem from="1715087438753" duration="707000" />
-      <workItem from="1715496858558" duration="1735000" />
+      <workItem from="1715496858558" duration="5511000" />
+      <workItem from="1715520668301" duration="1720000" />
+      <workItem from="1715522515683" duration="51000" />
+      <workItem from="1715596165307" duration="683000" />
+      <workItem from="1715837547832" duration="1156000" />
+      <workItem from="1715860922805" duration="11216000" />
     </task>
     <servers />
   </component>

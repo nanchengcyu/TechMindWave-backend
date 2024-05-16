@@ -19,6 +19,7 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Chart implements Serializable {
+
     /**
      * id
      */
@@ -89,4 +90,10 @@ public class Chart implements Serializable {
 
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;
+
+    @TableField(exist = false)
+    private User user; // 用户信息
+
+
+
 }
