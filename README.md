@@ -1,11 +1,11 @@
 > 此系统为个人毕设项目<br>
 > 完整项目请看 finall 分支，yml 配置文件请在 dev 分支下载<br>
 > 💫作者：南城余（点击下方文字即可跳转主页）<br>
-> 🌟全平台账号：[公众号](https://mp.weixin.qq.com/s/hbpMZs_qY0rdZPLARJo7Hw)、[CSDN](https://blog.csdn.net/m0_63031112?spm=1000.2115.3001.5343)、[GitHub](https://github.com/nanchengcyu)、[语雀](https://www.yuque.com/nanchengcyu)、[知乎](https://www.zhihu.com/people/nanchengyu)
-> 前端地址：
-> [https://github.com/nanchengcyu/TechMindWave-frontend](https://github.com/nanchengcyu/TechMindWave-frontend)
-> 后端地址：
-> [https://github.com/nanchengcyu/TechMindWave-backend](https://github.com/nanchengcyu/TechMindWave-backend)
+> 🌟全平台账号：[公众号](https://mp.weixin.qq.com/s/hbpMZs_qY0rdZPLARJo7Hw)、[CSDN](https://blog.csdn.net/m0_63031112?spm=1000.2115.3001.5343)、[GitHub](https://github.com/nanchengcyu)、[语雀](https://www.yuque.com/nanchengcyu)、[知乎](https://www.zhihu.com/people/nanchengyu)<br>
+> 前端地址：<br>
+> [https://github.com/nanchengcyu/TechMindWave-frontend](https://github.com/nanchengcyu/TechMindWave-frontend)<br>
+> 后端地址：<br>
+> [https://github.com/nanchengcyu/TechMindWave-backend](https://github.com/nanchengcyu/TechMindWave-backend)<br>
 
 <a name="kbWsl"></a>
 
