@@ -1,4 +1,4 @@
-> 此系统为个人毕设项目<br>
+![image](https://github.com/nanchengcyu/TechMindWave-backend/assets/104661473/984c4d57-b106-4af2-a8c8-46e2ff9caf7e)> 此系统为个人毕设项目<br>
 > 完整项目请看 finall 分支，yml 配置文件请在 dev 分支下载<br>
 > 💫作者：南城余（点击下方文字即可跳转主页）<br>
 > 🌟全平台账号：[公众号](https://mp.weixin.qq.com/s/hbpMZs_qY0rdZPLARJo7Hw)、[CSDN](https://blog.csdn.net/m0_63031112?spm=1000.2115.3001.5343)、[GitHub](https://github.com/nanchengcyu)、[语雀](https://www.yuque.com/nanchengcyu)、[知乎](https://www.zhihu.com/people/nanchengyu)<br>
@@ -14,6 +14,8 @@
 > 本系统可做为毕设项目，可提供完整的 PPT，以及论文等材料。
 
 系统基于 Spring Boot 和 Ant Design Pro ，主要功能有图表、文章、回答生成，以及个人信息管理，管理员管理，可以对用户生成的图表、文章、回答进行管理。
+![image](https://github.com/nanchengcyu/TechMindWave-backend/assets/104661473/9d518499-1ae1-4611-8850-2dfb087f55bc)
+
 <a name="xk4HA"></a>
 
 ### 系统功能
