@@ -5,8 +5,7 @@
   <img src="https://img.shields.io/github/languages/count/nanchengcyu/TechMindWave-backend" alt="languages"/>
   <img src="https://img.shields.io/badge/Java-8-blue" alt="Java"/>
   <img src="https://img.shields.io/github/last-commit/nanchengcyu/TechMindWave-backend" alt="last commit"/><br>
-  <img alt="Static Badge" src="https://img.shields.io/badge/nanchengyu?logo=nanchengyu&label=nanchengyu">
-  ![](https://img.shields.io/badge/author-nanchengyu-green)
+  <img src="https://img.shields.io/badge/Author-nanchengyu-orange" alt="Author" />
 </p>
 <hr>
 
