@@ -5,7 +5,7 @@
   <img src="https://img.shields.io/github/languages/count/nanchengcyu/TechMindWave-backend" alt="languages"/>
   <img src="https://img.shields.io/badge/Java-8-blue" alt="Java"/>
   <img src="https://img.shields.io/github/last-commit/nanchengcyu/TechMindWave-backend" alt="last commit"/><br>
-  <img alt="Static Badge" src="https://img.shields.io/badge/:badgeContent?label=nanchengyu">
+ **Author:** [南城余](https://github.com/nanchengcyu)
 </p>
 <hr>
 
