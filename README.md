@@ -1,15 +1,13 @@
 <h1 align="center">自动图文生成系统</h1>
-
+<hr>
 <p align="center">
   <img src="https://img.shields.io/github/languages/code-size/nanchengcyu/TechMindWave-backend" alt="code size"/>
   <img src="https://img.shields.io/badge/Spring%20Boot-2.5.4-brightgreen" alt="Spring Boot"/>
   <img src="https://img.shields.io/github/languages/count/nanchengcyu/TechMindWave-backend" alt="languages"/>
   <img src="https://img.shields.io/badge/Java-8-blue" alt="Java"/>
-  <img src="https://img.shields.io/github/last-commit/nanchengcyu/TechMindWave-backend" alt="last commit"/>
+  <img src="https://img.shields.io/github/last-commit/nanchengcyu/TechMindWave-backend" alt="last commit"/><br>
+  <img src="https://img.shields.io/badge/Author-Ritusan-orange" alt="南城余" />
 </p>
-
-**Author:** [南城余](https://github.com/nanchengcyu)
-
 
 ![image](https://github.com/nanchengcyu/TechMindWave-backend/assets/104661473/984c4d57-b106-4af2-a8c8-46e2ff9caf7e)> 此系统为个人毕设项目<br>
 > 完整项目请看 finall 分支，yml 配置文件请在 dev 分支下载<br>
