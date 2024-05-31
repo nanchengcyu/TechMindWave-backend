@@ -1,6 +1,8 @@
-code-size dependency-version languages-count languages-top
+<img src="https://img.shields.io/badge/Author-Ritusan-orange" alt="Author" />
+<img src="https://img.shields.io/github/package-json/dependency-version/Ritusan/color-library/vue?color=brightgreen" alt="dependency-version" />
+<img src="https://img.shields.io/github/last-commit/Ritusan/color-library" alt="last-commit" />
+<img src="https://img.shields.io/github/languages/top/Ritusan/color-library?color=yellow" alt="languages-top" />
 
-Author last-commit colorful
 ![image](https://github.com/nanchengcyu/TechMindWave-backend/assets/104661473/984c4d57-b106-4af2-a8c8-46e2ff9caf7e)> 此系统为个人毕设项目<br>
 > 完整项目请看 finall 分支，yml 配置文件请在 dev 分支下载<br>
 > 💫作者：南城余（点击下方文字即可跳转主页）<br>
