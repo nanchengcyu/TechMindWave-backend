@@ -8,6 +8,7 @@
   <img src="https://img.shields.io/badge/Author-Ritusan-orange" alt="南城余" />
 </p>
 <hr>
+
 > 此系统为个人毕设项目<br>
 > 完整项目请看 finall 分支，yml 配置文件请在 dev 分支下载<br>
 > 💫作者：南城余（点击下方文字即可跳转主页）<br>
@@ -16,7 +17,6 @@
 > [https://github.com/nanchengcyu/TechMindWave-frontend](https://github.com/nanchengcyu/TechMindWave-frontend)<br>
 > 后端地址：<br>
 > [https://github.com/nanchengcyu/TechMindWave-backend](https://github.com/nanchengcyu/TechMindWave-backend)<br>
-
 <a name="kbWsl"></a>
 
 ### 系统简介
