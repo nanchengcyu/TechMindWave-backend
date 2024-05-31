@@ -1,4 +1,10 @@
-<img src="https://img.shields.io/badge/Author-Ritusan-orange" alt="Author" /><img src="https://img.shields.io/github/package-json/dependency-version/Ritusan/color-library/vue?color=brightgreen" alt="dependency-version" /><img src="https://img.shields.io/github/last-commit/Ritusan/color-library" alt="last-commit" /><img src="https://img.shields.io/github/languages/top/Ritusan/color-library?color=yellow" alt="languages-top" />
+![code size](https://img.shields.io/github/languages/code-size/nanchengcyu/TechMindWave-backend)
+![Spring Boot](https://img.shields.io/badge/Spring%20Boot-2.5.4-brightgreen)
+![languages](https://img.shields.io/github/languages/count/nanchengcyu/TechMindWave-backend)
+![Java](https://img.shields.io/badge/Java-8-blue)
+![last commit](https://img.shields.io/github/last-commit/nanchengcyu/TechMindWave-backend)
+
+**Author:** [南城余](https://github.com/nanchengcyu)
 
 ![image](https://github.com/nanchengcyu/TechMindWave-backend/assets/104661473/984c4d57-b106-4af2-a8c8-46e2ff9caf7e)> 此系统为个人毕设项目<br>
 > 完整项目请看 finall 分支，yml 配置文件请在 dev 分支下载<br>
