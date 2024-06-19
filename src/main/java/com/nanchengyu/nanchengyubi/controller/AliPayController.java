@@ -144,7 +144,7 @@ public class AliPayController {
 //        String url = String.format("http://localhost:8001/api/alipay/pay?alipayAccountNo=%s", alipayAccountNo);
         // todo  内网地址 穿透工具 natapp 在项目目录下安装着
         //支付宝内网地址 http://8wt7gy.natappfree.cc
-        String url = String.format("http://8wt7gy.natappfree.cc/api/alipay/pay?alipayAccountNo=%s", alipayAccountNo);
+        String url = String.format("http://bz964x.natappfree.cc/api/alipay/pay?alipayAccountNo=%s", alipayAccountNo);
         String generateQrCode = QrCodeUtil.generateAsBase64(url, new QrConfig(400, 400), "png");
         AlipayInfoVO alipayInfoVO = new AlipayInfoVO();
         alipayInfoVO.setAlipayAccountNo(String.valueOf(alipayAccountNo));
