@@ -1,3 +1,4 @@
+>其他分支为本人学习分支，如MQ分支<br>
 <h1 align="center">自动图文生成系统</h1>
 <p align="center">
   <img src="https://img.shields.io/github/languages/code-size/nanchengcyu/TechMindWave-backend" alt="code size"/>
