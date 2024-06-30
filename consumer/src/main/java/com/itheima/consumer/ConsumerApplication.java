@@ -12,8 +12,5 @@ public class ConsumerApplication {
         SpringApplication.run(ConsumerApplication.class, args);
     }
 
-    @Bean
-    public MessageConverter jacksonMessageConvertor(){
-        return new Jackson2JsonMessageConverter();
-    }
+
 }

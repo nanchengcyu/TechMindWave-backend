@@ -7,33 +7,32 @@ import org.springframework.amqp.core.Queue;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-@Configuration
+/**
+ * ClassName: FanoutConfiguration
+ * Package: com.itheima.consumer.config
+ * Description:
+ *
+ * @Author 南城余
+ * @Create 2024/7/1 0:24
+ * @Version 1.0
+ */
+
 public class FanoutConfiguration {
-
+    //创建队列 构造器
     @Bean
-    public FanoutExchange fanoutExchange(){
-        // ExchangeBuilder.fanoutExchange("").build();
-        return new FanoutExchange("hmall.fanout2");
+    public Queue fanoutQueue() {
+        return new Queue("fanout.queue", true);
     }
 
+    //创建交换机
     @Bean
-    public Queue fanoutQueue3(){
-        // QueueBuilder.durable("ff").build();
-        return new Queue("fanout.queue3");
+    public FanoutExchange fanoutExchange() {
+        return new FanoutExchange("fanout.exchange");
     }
 
+    //绑定队列和交换机
     @Bean
-    public Binding fanoutBinding3(Queue fanoutQueue3, FanoutExchange fanoutExchange){
-        return BindingBuilder.bind(fanoutQueue3).to(fanoutExchange);
-    }
-
-    @Bean
-    public Queue fanoutQueue4(){
-        return new Queue("fanout.queue4");
-    }
-
-    @Bean
-    public Binding fanoutBinding4(){
-        return BindingBuilder.bind(fanoutQueue4()).to(fanoutExchange());
+    public Binding fanoutBinging(Queue fanoutQueue,FanoutExchange fanoutExchange) {
+        return BindingBuilder.bind(fanoutQueue).to(fanoutExchange);
     }
 }
