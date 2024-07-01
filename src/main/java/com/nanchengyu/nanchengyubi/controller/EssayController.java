@@ -15,10 +15,7 @@ import com.nanchengyu.nanchengyubi.exception.BusinessException;
 import com.nanchengyu.nanchengyubi.exception.ThrowUtils;
 import com.nanchengyu.nanchengyubi.manager.AiManager;
 import com.nanchengyu.nanchengyubi.manager.RedisLimiterManager;
-import com.nanchengyu.nanchengyubi.model.dto.Essay.EssayAddRequest;
-import com.nanchengyu.nanchengyubi.model.dto.Essay.EssayEditRequest;
-import com.nanchengyu.nanchengyubi.model.dto.Essay.EssayQueryRequest;
-import com.nanchengyu.nanchengyubi.model.dto.Essay.EssayUpdateRequest;
+import com.nanchengyu.nanchengyubi.model.dto.Essay.*;
 
 import com.nanchengyu.nanchengyubi.model.entity.Chart;
 import com.nanchengyu.nanchengyubi.model.entity.Essay;
@@ -31,6 +28,7 @@ import com.nanchengyu.nanchengyubi.service.UserService;
 import com.nanchengyu.nanchengyubi.utils.SqlUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.ObjectUtils;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -46,7 +44,8 @@ import javax.servlet.http.HttpServletRequest;
 @RestController
 @RequestMapping("/essay")
 @Slf4j
-@CrossOrigin(origins = {"https://techmindwave.nanchengyu.cn", "http://localhost:800"}, allowCredentials = "true")
+//@CrossOrigin(origins = {"https://techmindwave.nanchengyu.cn", "http://localhost:800"}, allowCredentials = "true")
+//@CrossOrigin(origins = {"https://techmindwave.nanchengyu.cn", "http://localhost:800","http://106.14.202.122:800","https://106.14.202.122:80","https://106.14.202.122:443"}, allowCredentials = "true")
 public class EssayController {
     @Autowired
     AiFrequencyService aiFrequencyService;
@@ -61,10 +60,38 @@ public class EssayController {
 
     @Resource
     private AiManager aiManager;
+    @Autowired
+    private RabbitTemplate rabbitTemplate;
 
-    private final static Gson GSON = new Gson();
+    //MQ 异步生成文章
+    @PostMapping("/gen/mq")
+    @AuthCheck(mustRole = UserConstant.DEFAULT_ROLE)
+    public BaseResponse<EssayResponse> genEssayByMQ(
+            final EssayAddRequest essayAddRequest,
+            HttpServletRequest request) {
 
-    // region 增删改查
+        User loginUser = userService.getLoginUser(request);
+        //增加 Redis 限流器
+        redisLimiterManager.doRateLimit("genEssayByAi_" + loginUser.getId());
+        //封装消息内容并发送
+        GenEssayMessage message = new GenEssayMessage(
+                essayAddRequest.getEssayName(), essayAddRequest.getEssayType(), loginUser.getId()
+        );
+        rabbitTemplate.convertAndSend("genEssayExchange", "genEssayRoutingKey", message);
+        // 构建响应
+        EssayResponse essayResponse = new EssayResponse();
+        essayResponse.setEssayTitle(essayAddRequest.getEssayName());
+        essayResponse.setEssayType(essayAddRequest.getEssayType());
+
+        // 调用ai次数减一
+        boolean invokeAutoDecrease = aiFrequencyService.invokeAutoDecrease(loginUser.getId());
+        ThrowUtils.throwIf(!invokeAutoDecrease, ErrorCode.PARAMS_ERROR, "次数减一失败");
+
+        return new BaseResponse<>(essayResponse);
+
+    }
+
+
     @PostMapping("/gen")
     @AuthCheck(mustRole = UserConstant.DEFAULT_ROLE)
     public BaseResponse<EssayResponse> genEssay(

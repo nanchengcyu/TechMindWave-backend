@@ -5,22 +5,45 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="879a5b8c-91c5-4465-b2d4-8f216e7eadd8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/790c9f87-2283-442a-8eac-b2f0d6fbf839.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/790c9f87-2283-442a-8eac-b2f0d6fbf839.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/790c9f87-2283-442a-8eac-b2f0d6fbf839/storage_v2/_src_/schema/techmindwave.4YqpnQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/790c9f87-2283-442a-8eac-b2f0d6fbf839/storage_v2/_src_/schema/techmindwave.4YqpnQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/NanchengyuApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/NanchengyuApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/config/CorsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/config/CorsConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/config/RabbitMqConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/config/RabbitMqConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/controller/AiAssistantController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/controller/AiAssistantController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/controller/AiFrequencyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/controller/AiFrequencyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/controller/AiFrequencyOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/controller/AiFrequencyOrderController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/controller/AliPayController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/controller/AliPayController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/controller/AliPayInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/controller/AliPayInfoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/controller/ChartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/controller/ChartController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/controller/EssayController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/controller/EssayController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/controller/FileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/controller/FileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/controller/QueueController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/controller/QueueController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/model/dto/Essay/EssayAddRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/model/dto/Essay/EssayAddRequest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenRunner">
+    <option name="skipTests" value="true" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -88,7 +111,7 @@
   <component name="RunManager">
     <configuration name="NanchengyuApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
-      <module name="nanchengyu-backend" />
+      <module name="techmindwave-backend" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.nanchengyu.nanchengyubi.NanchengyuApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -159,11 +182,30 @@
       <workItem from="1716900817869" duration="4010000" />
       <workItem from="1717742415861" duration="678000" />
       <workItem from="1717765669222" duration="32000" />
+      <workItem from="1718799264957" duration="5673000" />
+      <workItem from="1718862762854" duration="6184000" />
+      <workItem from="1719752415124" duration="601000" />
+      <workItem from="1719844193309" duration="6781000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/nanchengyu/nanchengyubi/service/ChartService.java</url>
+          <line>44</line>
+          <properties class="com.nanchengyu.nanchengyubi.service.ChartService" method="genChartByAiAsyncMq">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

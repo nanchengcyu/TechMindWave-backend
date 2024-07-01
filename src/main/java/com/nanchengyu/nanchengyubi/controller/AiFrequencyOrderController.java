@@ -42,7 +42,8 @@ import java.util.List;
 //@CrossOrigin(origins = "http://localhost:800", allowCredentials = "true")
 //@CrossOrigin(origins = "https://techmindwave.nanchengyu.cn", allowCredentials = "true")
 
-@CrossOrigin(origins = {"https://techmindwave.nanchengyu.cn", "http://localhost:800"}, allowCredentials = "true")
+//@CrossOrigin(origins = {"https://techmindwave.nanchengyu.cn", "http://localhost:800"}, allowCredentials = "true")
+//@CrossOrigin(origins = {"https://techmindwave.nanchengyu.cn", "http://localhost:800","http://106.14.202.122:800","https://106.14.202.122:80","https://106.14.202.122:443"}, allowCredentials = "true")
 public class AiFrequencyOrderController {
 
 

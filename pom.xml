@@ -10,9 +10,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.nanchengyu</groupId>
-    <artifactId>nanchengyu-backend</artifactId>
-    <version>5.0-SNAPSHOT</version>
-    <name>nanchengyu-backend</name>
+    <artifactId>techmindwave-backend</artifactId>
+    <version>1.0</version>
+    <name>techmindwave-backend</name>
     <properties>
         <java.version>1.8</java.version>
     </properties>
